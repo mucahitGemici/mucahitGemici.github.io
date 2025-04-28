@@ -1,7 +1,3 @@
- html{
-    font-size: 32px;
-}
-
 body{
     background-color: #333;
     color: greenyellow;
@@ -36,10 +32,20 @@ a:hover, a:active{
 
 h1, h2, h3{
     color: blueviolet;
+    width: 50%;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border: 2px dashed red;
 }
+
 
 p .highlight{
     text-transform: uppercase;
     background-color: plum;
     color: blue;
+}
+
+button {
+    padding: 1rem;
+    
 }
