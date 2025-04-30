@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+.cal-sans-regular {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+* {
+    font-family: "Cal Sans";
+}
+
 body{
     background-color: #333;
     color: greenyellow;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    line-height: normal;
+    line-height: 1.5;
 
     width: 60%;
+
+    padding: 2rem;
+    margin: 2rem;
 }
 
 a{
@@ -29,9 +43,7 @@ a:hover, a:active{
 }
 
 .container {
-    padding: 1.5rem;
     font-size: 1.5rem;
-    margin: 1.5rem;
     border: 2.5px red dashed;
     border-top: 5px solid;
 }
@@ -55,4 +67,18 @@ button {
     border: 2px solid black;
     border-radius: 50px;
     outline: 2px solid red;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: outside;
+    line-height: 1.5;
+}
+
+ul {
+    list-style-type: square;
+}
+
+::marker {
+    color: lightgray;
 }
