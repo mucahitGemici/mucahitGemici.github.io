@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 
-.cal-sans-regular {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-* {
-    font-family: "Cal Sans";
-}
-
 body{
     background-color: #333;
     color: greenyellow;
