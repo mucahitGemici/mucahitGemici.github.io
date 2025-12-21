@@ -1,0 +1,253 @@
+/* =========================================
+   1. RESET & BASIC TYPOGRAPHY
+   ========================================= */
+   :root {
+    /* Nord Color Palette */
+    --bg-color: #ECEFF4;       /* Light Gray/White */
+    --card-bg: #FFFFFF;        /* Pure White */
+    --nav-bg: #2E3440;         /* Dark Slate */
+    --text-main: #2E3440;      /* Dark Text */
+    --text-light: #4C566A;     /* Gray Text */
+    --accent: #5E81AC;         /* Muted Blue */
+    --accent-hover: #81A1C1;   /* Lighter Blue */
+    --border: #D8DEE9;         /* Border Gray */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+   ========================================= */
+nav {
+    background-color: var(--nav-bg);
+    color: white;
+    padding: 1rem 0;
+    position: sticky; /* Keeps nav visible when scrolling */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff !important;
+    text-decoration: none !important;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #D8DEE9; /* Off-white for nav links */
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+nav a:hover, nav a.active {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent-hover);
+}
+
+/* =========================================
+   3. HERO SECTION (Profile)
+   ========================================= */
+.hero-section {
+    background-color: var(--card-bg);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.hero-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover; /* Ensures photo doesn't stretch */
+    border-radius: 50%; /* Makes it a circle */
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.social-links {
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    margin: 0 8px;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* =========================================
+   4. MAIN CONTENT
+   ========================================= */
+main {
+    max-width: 850px;
+    margin: 0 auto 3rem auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    margin-bottom: 2.5rem;
+    background: var(--card-bg); /* Optional: Boxed content */
+    padding: 2rem;              /* Optional: Boxed content */
+    border-radius: 8px;         /* Optional: Boxed content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Optional: Boxed content */
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bg-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 2rem 0;
+}
+
+/* =========================================
+   5. LISTS & UPDATES
+   ========================================= */
+.interest-list {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.interest-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Timeline Style for Updates */
+.update-item {
+    display: flex; /* Puts date and text side-by-side */
+    margin-bottom: 1.2rem;
+    border-left: 3px solid var(--border);
+    padding-left: 15px;
+    transition: border-color 0.3s;
+}
+
+.update-item:hover {
+    border-left-color: var(--accent);
+}
+
+.date {
+    min-width: 140px; /* Fixed width for dates alignment */
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding-top: 2px; /* Slight alignment fix */
+}
+
+.update-item p {
+    margin: 0;
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    background-color: var(--card-bg);
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+   ========================================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        gap: 15px;
+        font-size: 0.9rem;
+    }
+
+    .update-item {
+        flex-direction: column; /* Stack date on top of text for mobile */
+    }
+
+    .date {
+        margin-bottom: 5px;
+    }
+}
