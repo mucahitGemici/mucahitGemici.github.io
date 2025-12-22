@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects | Mucahit Gemici</title>
+        <link rel="stylesheet" href="css/new_style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <script src="javascript/projects.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div class="nav-container">
+                <a href="new_index.html" class="logo">M. Gemici</a>
+                <ul>
+                    <li><a href="new_index.html">Home</a></li>
+                    <li><a href="cv.html">CV & Experience</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="hero-section">
+            <div class="container">
+                <h1>My Academic Research and Game Projects</h1>
+            </div>
+        </header>
+
+        <main> 
+            
+            <section class="content-section">
+                <h2>Academic Research</h2>
+                
+                <div class="carousel-container" id="research-carousel">
+                    
+                    <button class="nav-btn prev" onclick="moveSlide('research-carousel', -1)">&#10094;</button>
+
+                    <div class="slides-wrapper">
+                        
+                        <div class="project-slide active">
+                            <div class="slide-gallery">
+                                <video width="450" autoplay muted loop playsinline controls class="main-media"><source src="website-videos/feedback-visual-video.mp4"></video>
+                                <div class="photo-viewer-main">
+                                    <img id="p1-main-img" src="website-images/feedback-visual/feedback-1.png" alt="Main view" width="450px">
+                                </div>
+
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/feedback-visual/feedback-1.png" class="thumb active" onclick="switchPhoto('p1-main-img', this)">
+                                    <img src="website-images/feedback-visual/feedback-2.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                    <img src="website-images/feedback-visual/feedback-3.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                    <img src="website-images/feedback-visual/feedback-4.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Before hands disappear: Effect of early warning visual feedback method for hand tracking failures in virtual reality</h3>
+                                <div class="award-badge google-badge">
+                                    <i class="fab fa-google"></i> Funded by Google
+                                </div>
+                                <p class="project-authors">
+                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz
+                                </p>
+                                <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
+                                <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
+                                <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="project-link">Read Paper &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <video width="450" autoplay muted loop playsinline controls class="main-media"><source src="website-videos/feedback-gaze.mp4"></video>
+                                <div class="photo-viewer-main">
+                                    <img id="p2-main-img" src="website-images/feedback-gaze/feedback-gaze-1.png" alt="Main view" width="450px">
+                                </div>
+
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-1.png" class="thumb active" onclick="switchPhoto('p2-main-img', this)">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-2.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-3.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Gaze Analysis in Early Warning Visual Feedback System for Hand Tracking Failures in Virtual Reality</h3>
+                                <div class="award-badge google-badge">
+                                    <i class="fab fa-google"></i> Funded by Google
+                                </div>
+                                <p class="project-authors">
+                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz
+                                </p>
+                                <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
+                                <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="project-link">Read Paper &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <iframe class="main-media" width="450" height="250" src="https://www.youtube.com/embed/N1DnMK9Q-sE?si=MaPutTEUx4ooVi0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div class="photo-viewer-main">
+                                    <img id="p3-main-img" src="website-images/sdf/sdf-1.png" alt="Main view" width="450">
+                                </div>
+
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/sdf/sdf-1.png" class="thumb active" onclick="switchPhoto('p3-main-img', this)">
+                                    <img src="website-images/sdf/sdf-2.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
+                                    <img src="website-images/sdf/sdf-3.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Object Speed Control with a Signed Distance Field for Distant Mid-Air Object Manipulation in Virtual Reality</h3>
+                                <p class="project-authors">
+                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz
+                                </p>
+                                <span class="tag">Signed Distance Field / Mid-Air Manipulation</span>
+                                <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="project-link">Read Paper &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <iframe width="450" height="250" src="https://www.youtube.com/embed/Ds8FF037uS4?si=Im_2WJ6v1DrNmQb1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <div class="photo-viewer-main">
+                                    <img id="p4-main-img" src="website-images/muscle-net/muscle-net-1.jpeg" alt="Main view" width="450">
+                                </div>
+
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/muscle-net/muscle-net-1.jpeg" class="thumb active" onclick="switchPhoto('p4-main-img', this)">
+                                    <img src="website-images/muscle-net/muscle-net-2.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                    <img src="website-images/muscle-net/muscle-net-3.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                    <img src="website-images/muscle-net/muscle-net-4.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>MuscleNET: Smart Predictive Analysis for Muscular Activity Using Wearable Sensors</h3>
+                                <div class="award-badge">
+                                    <i class="fas fa-trophy"></i> Best Graduation Project Award (Kadir Has University, 2022)
+                                </div>
+                                <p class="project-authors">
+                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Korkmaz, N.T. Ayhan, Ş. Soylu, A.S. Öğrenci
+                                </p>
+                                <span class="tag">Deep Learning / sEMG Signals / Real-Time Systems / Wearable Devices</span>
+                                <p>This project addresses the risk of sport-related injuries caused by unsupervised weight training by bridging the gap between wearable hardware and advanced machine learning. I helped design a custom wearable device using MyoWare muscle sensors and an Arduino Nano to collect real-time Surface Electromyography (sEMG) signals, which are transmitted via Bluetooth to a dedicated mobile application. To analyze this data, I implemented a dual-stage AI pipeline: Deep Neural Networks (DNN) to classify training quality (determining if the weight is optimal, too light, or too heavy) and Long Short-Term Memory (LSTM) networks to forecast potential injuries based on fatigue patterns. The system achieved an 85% accuracy rate in classifying training quality using data augmentation techniques, effectively acting as a "digital spotter" to ensure safe and efficient workouts.</p>
+                                <a href="https://ieeexplore.ieee.org/abstract/document/9925553" target="_blank" class="project-link">Read Paper &rarr;</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="nav-btn next" onclick="moveSlide('research-carousel', 1)">&#10095;</button>
+
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide('research-carousel', 0)"></span>
+                        <span class="dot" onclick="currentSlide('research-carousel', 1)"></span>
+                        <span class="dot" onclick="currentSlide('research-carousel', 2)"></span>
+                        <span class="dot" onclick="currentSlide('research-carousel', 3)"></span>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="content-section">
+                <h2>Game Development</h2>
+                
+                <div class="carousel-container" id="games-carousel">
+                    
+                    <button class="nav-btn prev" onclick="moveSlide('games-carousel', -1)">&#10094;</button>
+
+                    <div class="slides-wrapper">
+
+                        <div class="project-slide active">
+                            <div class="slide-gallery">
+                                <img src="" alt="">
+                                <div class="gallery-strip">
+                                    <img src="">
+                                    <img src="">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Game Name</h3>
+                                <span class="tag">Keywords</span>
+                                <p>Explanation</p>
+                                <a href="" target="_blank" class="project-link">Link &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <img src="website-images/castle-defender/castle-defender-1.jpeg" alt="Castle Defender">
+                                <div class="gallery-strip">
+                                    <img src="website-images/castle-defender/castle-defender-2.jpeg">
+                                    <img src="website-images/castle-defender/castle-defender-3.jpeg">
+                                </div>
+                            </div>
+                            <div class="slide-content">
+                                <h3>Castle Defender</h3>
+                                <span class="tag">Unity / FPS</span>
+                                <p>A first-person tower defense game. Instead of watching from above, the player is placed right in the action. Features low-poly 3D style and wave-based survival mechanics.</p>
+                                <a href="https://notsailor.itch.io/castle-defender" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <img src="website-images/garbage-vacuumer.jpg" alt="Garbage Vacuumer"> </div>
+                            <div class="slide-content">
+                                <h3>Garbage Vacuumer</h3>
+                                <span class="tag">Mobile / Hyper-Casual</span>
+                                <p>A successful hyper-casual title with 10,000+ downloads. I designed the core concept and gameplay, collaborating with publishers to refine the experience. Features a robust progression system and resource management.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="nav-btn next" onclick="moveSlide('games-carousel', 1)">&#10095;</button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Mucahit Gemici. Hosted on GitHub Pages.</p>
+            </div>
+        </footer>
+
+        
+    </body>
+</html>

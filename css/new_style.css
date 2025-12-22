@@ -53,7 +53,7 @@ nav {
 .nav-container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -144,7 +144,7 @@ h1 {
    4. MAIN CONTENT
    ========================================= */
 main {
-    max-width: 850px;
+    max-width: 1100px;
     margin: 0 auto 3rem auto;
     padding: 0 20px;
 }
@@ -288,4 +288,346 @@ footer {
 
 .pub-id.workshop {
     background-color: #a3be8c; /* Green for Workshops */
+}
+
+/* =========================================
+   CAROUSEL / SLIDESHOW STYLING (UPDATED)
+   ========================================= */
+
+   .carousel-container {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0; /* Removed padding to let image touch edges if desired */
+    display: flex;
+    align-items: stretch; /* Ensures full height for buttons */
+    overflow: hidden; /* Keeps rounded corners clean */
+    min-height: 400px; /* Increased height for better balance */
+}
+
+/* Navigation Buttons (Arrows) */
+.nav-btn {
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    border: none;
+    font-size: 2rem;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 0 15px;
+    transition: all 0.2s;
+    z-index: 2; /* Ensures it sits on top */
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--accent);
+}
+
+.slides-wrapper {
+    flex-grow: 1;
+    position: relative;
+    padding: 30px 10px; /* Internal padding for content */
+}
+
+/* Individual Slide */
+.project-slide {
+    display: none;
+    flex-direction: row;
+    gap: 30px; /* More space between image and text */
+    align-items: start;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.project-slide.active {
+    display: flex;
+}
+
+/* --- Left Side: Gallery (WIDER NOW) --- */
+.slide-gallery {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+/* The Main Display Image/Video */
+.slide-gallery img.main-media {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Forces standard video shape */
+    object-fit: contain;  /* Shows WHOLE diagram without cropping */
+    background-color: #000; /* nice background for videos/dark screenshots */
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Thumbnail Strip */
+.gallery-strip {
+    display: flex;
+    gap: 10px;
+    height: 60px; /* Fixed height for thumb row */
+}
+
+.gallery-strip img {
+    height: 100%; /* Fill the 60px height */
+    width: auto;  /* Let width adjust naturally */
+    aspect-ratio: 16/9; /* Optional: forces thumbnails to match main ratio */
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.6;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.gallery-strip img:hover {
+    opacity: 1;
+    border-color: var(--accent);
+}
+
+/* --- Right Side: Content (NARROWER) --- */
+.slide-content {
+    flex: 1; /* Takes remaining space */
+    padding-right: 15px;
+}
+
+.slide-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.slide-content .tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slide-content p {
+    font-size: 0.95rem;
+    line-height: 1.7; /* Better readability for long text */
+    color: var(--text-light);
+    margin-bottom: 25px;
+}
+
+/* Responsive Fix */
+@media (max-width: 850px) {
+    .project-slide {
+        flex-direction: column;
+    }
+    .slide-gallery {
+        width: 100%;
+        flex: none;
+    }
+    .slide-content {
+        padding-right: 0;
+    }
+}
+
+/* --- GALLERY GRID UPDATE --- */
+
+/* The container for the images below the video */
+.gallery-strip {
+    display: grid;
+    /* This creates 2 columns of equal width */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* The individual images inside the grid */
+.gallery-strip img {
+    width: 100%;       /* Fill the column width */
+    height: auto;      /* Maintain aspect ratio */
+    aspect-ratio: 16/9; /* Optional: Forces uniform shape */
+    object-fit: cover;
+    border-radius: 4px;
+    opacity: 0.8;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.gallery-strip img:hover {
+    opacity: 1;
+    border-color: var(--accent);
+    transform: scale(1.02); /* Slight pop effect */
+}
+
+/* --- GALLERY WITH THUMBNAILS --- */
+
+/* The container for the main large image display */
+.photo-viewer-main {
+    margin-top: 15px;
+    width: 450px;
+    aspect-ratio: 16/9; /* Keep consistent shape with video */
+    background: #000;   /* Dark background makes images pop */
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.photo-viewer-main img {
+    width: 450px;
+    height: 250px;
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+}
+
+/* The strip of small thumbnails below */
+.photo-thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto; /* Allows scrolling if you have many thumbnails */
+    padding-bottom: 5px; /* Space for scrollbar if necessary */
+    scrollbar-width: none; /* Hides scrollbar Firefox */
+}
+.photo-thumbnails::-webkit-scrollbar { display: none; /* Hides scrollbar Chrome/Safari */ }
+
+/* Individual thumbnail styling */
+.thumb {
+    width: 70px;        /* Fixed width for uniformity */
+    height: 45px;       /* Fixed height */
+    object-fit: cover;  /* Crops thumbnails nicely */
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.5;       /* Dimmed by default */
+    border: 2px solid transparent; /* Placeholder for border */
+    transition: all 0.2s;
+}
+
+.thumb:hover {
+    opacity: 1;
+}
+
+/* Style for the currently selected thumbnail */
+.thumb.active {
+    opacity: 1;
+    border-color: var(--accent); /* Highlights selected item with blue border */
+    transform: scale(1.05);      /* Slight pop effect */
+}
+
+.award-badge {
+    display: inline-block;
+    background-color: #f1c40f; /* Gold color */
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px; /* Space between award and tags */
+    margin-right: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.award-badge i {
+    margin-right: 5px; /* Space between trophy icon and text */
+}
+
+/* Special Style for Google Badge */
+.google-badge {
+    background-color: #4285F4; /* Google Blue */
+    color: white;
+}
+
+/* Ensure the Google icon has a little space */
+.google-badge i {
+    margin-right: 6px;
+}
+
+/* UPDATED NAVIGATION BUTTONS */
+.nav-btn {
+    background-color: var(--nav-bg); /* Dark background */
+    color: white;                    /* White arrow */
+    border: none;
+    width: 50px;                     /* Fixed width */
+    height: 50px;                    /* Fixed height */
+    border-radius: 50%;              /* Perfect circle */
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Drop shadow for depth */
+    transition: all 0.3s ease;
+    z-index: 10;
+    
+    /* Position them strictly */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-btn:hover {
+    background-color: var(--accent); /* Turn blue on hover */
+    transform: translateY(-50%) scale(1.1); /* Grow slightly */
+}
+
+/* Position Left and Right specifically */
+.nav-btn.prev {
+    left: -25px; /* Pull it slightly OUTSIDE the box on the left */
+}
+
+.nav-btn.next {
+    right: -25px; /* Pull it slightly OUTSIDE the box on the right */
+}
+
+/* Ensure the container allows buttons to sit on the edge */
+.carousel-container {
+    overflow: visible; /* CRITICAL: Allows buttons to sit outside the box */
+}
+
+/* Dots Container */
+.carousel-dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+/* Individual Dot */
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc; /* Inactive color */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--accent); /* Active color (Blue) */
+    transform: scale(1.2);
+}
+
+/* Define the Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px); /* Starts slightly to the right */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);    /* Ends in original position */
+    }
+}
+
+/* Apply it to the active slide */
+.project-slide.active {
+    display: flex; /* Ensures it's visible (keep your existing display logic) */
+    animation: slideIn 0.5s ease-out forwards; /* Plays the animation */
 }
