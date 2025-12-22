@@ -157,6 +157,7 @@ main {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Optional: Boxed content */
 }
 
+
 h2 {
     font-size: 1.5rem;
     color: var(--text-main);
@@ -250,4 +251,41 @@ footer {
     .date {
         margin-bottom: 5px;
     }
+}
+
+/* Fix spacing inside paper items */
+.paper-item p {
+    margin: 2px 0; /* drastically reduces the top/bottom space */
+    line-height: 1.4; /* keeps the text readable */
+}
+
+/* Optional: Add a little space between the title and authors if you want */
+.paper-item p:first-child {
+    margin-bottom: 4px;
+}
+
+/* Badge Styling */
+.pub-id {
+    display: inline-block;       /* Keeps it on the same line as text */
+    padding: 2px 8px;            /* Size of the colored box */
+    border-radius: 4px;          /* Rounded corners */
+    font-size: 0.75rem;          /* Slightly smaller than title */
+    font-weight: bold;
+    color: white;                /* Text color inside badge */
+    margin-right: 8px;           /* Space between badge and title */
+    vertical-align: text-bottom; /* Aligns with the bottom of the letters */
+    line-height: 1.2;
+}
+
+/* Color variations */
+.pub-id.journal {
+    background-color: #bf616a; /* Red for Journals */
+}
+
+.pub-id.conference {
+    background-color: #5e81ac; /* Blue for Conferences */
+}
+
+.pub-id.workshop {
+    background-color: #a3be8c; /* Green for Workshops */
 }
