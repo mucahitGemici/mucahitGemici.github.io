@@ -394,6 +394,11 @@ footer {
     padding-right: 15px;
 }
 
+.slide-content-game {
+    flex: 1.4; /* Takes remaining space */
+    padding-right: 15px;
+}
+
 .slide-content h3 {
     margin-top: 0;
     margin-bottom: 8px;
@@ -630,4 +635,128 @@ footer {
 .project-slide.active {
     display: flex; /* Ensures it's visible (keep your existing display logic) */
     animation: slideIn 0.5s ease-out forwards; /* Plays the animation */
+}
+
+/* Game Stats Grid (The Badges) */
+.game-stats-grid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.stat-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1; /* Makes them equal width */
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stat-box i {
+    color: var(--accent); /* Blue icon */
+}
+
+/* Feature List (Bulleted points) */
+h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    margin-top: 15px;
+    color: var(--text-main);
+}
+
+.game-features-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.game-features-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* Custom Bullet points */
+.game-features-list li::before {
+    content: "•";
+    color: var(--accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Tech Stack Row */
+.tech-stack-row {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-tag {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #d1d5db;    /* Thin grey border */
+    color: #555;                  /* Grey text */
+    padding: 2px 8px;             /* Small padding */
+    border-radius: 12px;          /* Pill shape */
+    font-size: 0.75rem;           /* Small font */
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+/* --- BADGE MODIFIERS --- */
+
+/* 1. ACHIEVEMENT (For Stats, CPI, Downloads) - Stands out with Gold/Green */
+.stat-box.achievement {
+    border-color: #f1c40f; /* Gold border */
+    background-color: #fffcf0; /* Very light yellow background */
+    color: #b7950b; /* Darker gold text */
+}
+.stat-box.achievement i {
+    color: #f39c12; /* Orange-Gold Icon */
+}
+
+/* 2. INFO (For Genre, Studio, Role) - Neutral/Blue */
+.stat-box.info {
+    border-color: #d6eaf8; /* Light Blue border */
+    background-color: #f4faff; /* Very light blue background */
+    color: #2e86c1; /* Dark Blue text */
+}
+.stat-box.info i {
+    color: #3498db; /* Blue Icon */
+}
+
+/* --- 1. MAIN GENRE TAG (Minimalist Style) --- */
+.tag {
+    display: inline-block;
+    font-size: 0.85rem;           /* Smaller than body text */
+    color: #6c757d;               /* Muted gray - easy on the eyes */
+    background-color: #f8f9fa;    /* Very faint background */
+    border: 1px solid #e9ecef;    /* Extremely subtle border */
+    padding: 4px 12px;            /* Compact padding */
+    border-radius: 20px;          /* Pill shape feels softer */
+    margin-bottom: 12px;
+    margin-top: 5px;
+    font-weight: 500;             /* Medium weight (not bold) */
+    letter-spacing: 0.3px;
+}
+
+/* Optional: Adds a tiny hash symbol before the text to signal "tag" */
+.tag::before {
+    content: "# ";
+    color: #adb5bd;               /* Very light gray hash */
+    font-weight: normal;
 }
