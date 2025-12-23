@@ -124,20 +124,56 @@ h1 {
     font-weight: 400;
 }
 
+/* =========================================
+   INDEX PAGE SOCIAL BUTTONS
+   ========================================= */
+
+/* 1. Layout the buttons side-by-side */
 .social-links {
-    margin-top: 15px;
-    font-size: 0.95rem;
+    display: flex;
+    justify-content: center; /* Center them */
+    gap: 15px;               /* Space between them */
+    margin-top: 20px;        /* Space from the text above */
 }
 
-.social-links a {
-    color: var(--text-light);
-    margin: 0 8px;
-    font-weight: 600;
+/* 2. LinkedIn Button Style (Brand Blue) */
+.hero-btn.linkedin {
+    background-color: #0077b5; 
+    color: white;
+    border: 2px solid #0077b5;
 }
 
-.social-links a:hover {
-    color: var(--accent);
-    text-decoration: none;
+.hero-btn.linkedin:hover {
+    background-color: #005582; /* Darker blue on hover */
+    border-color: #005582;
+    transform: translateY(-3px);
+}
+
+/* 3. Google Scholar Button Style (Google Blue) */
+.hero-btn.scholar {
+    background-color: #4285F4; 
+    color: white;
+    border: 2px solid #4285F4;
+}
+
+.hero-btn.scholar:hover {
+    background-color: #3367d6; /* Darker blue on hover */
+    border-color: #3367d6;
+    transform: translateY(-3px);
+}
+
+/* Mobile Adjustment: Stack them on small screens */
+@media (max-width: 600px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links .hero-btn {
+        width: 100%;
+        max-width: 250px; /* Prevents them from getting too wide */
+        justify-content: center;
+    }
 }
 
 /* =========================================
@@ -328,7 +364,7 @@ footer {
 .slides-wrapper {
     flex-grow: 1;
     position: relative;
-    padding: 30px 10px; /* Internal padding for content */
+    padding: 30px 20px 40px 20px; /* Internal padding for content */
 }
 
 /* Individual Slide */
@@ -759,4 +795,331 @@ h4 {
     content: "# ";
     color: #adb5bd;               /* Very light gray hash */
     font-weight: normal;
+}
+
+/* Container to match your iframe size */
+.youtube-link-card {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: #000; /* Fallback color */
+    overflow: hidden;
+    margin-bottom: 15px; /* Spacing before photo viewer */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.video-link-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+/* Ensure the image fills the box */
+.video-link-wrapper img.main-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* Slightly dim image to make text pop */
+    transition: opacity 0.3s ease;
+}
+
+.video-link-wrapper:hover img.main-media {
+    opacity: 0.6;
+}
+
+/* The Play Button Overlay */
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.play-overlay i {
+    font-size: 3rem;
+    color: #ff0000; /* YouTube Red */
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 60px; /* Vertically center the icon */
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.play-overlay span {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   AUTO-ROTATING SUCCESS CARD (White Background Version)
+   ========================================= */
+
+/* The Main Container */
+.auto-success-card {
+    position: relative;
+    width: 75%;
+    height: 300px;
+    
+    /* CENTERING FIX: */
+    /* top | right (auto) | bottom | left (auto) */
+    margin: 0 auto 15px auto;
+
+    /* CHANGE: White background */
+    background-color: #fff; 
+    
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    
+    /* CHANGE: Light grey border to match white theme */
+    border: 1px solid #ddd; 
+}
+
+/* The Individual Slides */
+.success-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* CHANGE: White background behind the images */
+    background: #fff; 
+}
+
+/* Active State */
+.success-slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* --- MODE A: PHOTO (Cover) --- */
+.success-slide img.cover-mode {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- MODE B: SCREENSHOT (Contain) --- */
+.success-slide img.contain-mode {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+/* The Caption Overlay */
+.success-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Keep dark background for text readability */
+    background: rgba(0, 0, 0, 0.5); 
+    
+    color: #fff;
+    padding: 8px 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #444;
+}
+
+.success-caption i {
+    margin-bottom: 3px;
+    font-size: 1rem;
+    color: #ffc107; /* Gold */
+}
+
+.tiny-text {
+    font-size: 0.75rem;
+    color: #ccc;
+    font-weight: normal;
+    margin-top: 2px;
+}
+
+/* Hover Effect */
+a.success-slide:hover img {
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+/* =========================================
+   HERO BUTTONS
+   ========================================= */
+
+/* Enables smooth scrolling when clicking buttons */
+html {
+    scroll-behavior: smooth;
+}
+
+.hero-btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;           /* Space between buttons */
+    margin-top: 25px;    /* Space from the H1 title */
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;           /* Space between icon and text */
+    padding: 12px 28px;
+    border-radius: 50px; /* Makes them pill-shaped */
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease; /* Smooth hover animation */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Style for Academic Button (Nord Blue) */
+.hero-btn.academic {
+    background-color: var(--accent); /* #5E81AC */
+    color: white;
+    border: 2px solid var(--accent);
+}
+
+/* Style for Game Button (Dark Slate) */
+.hero-btn.games {
+    background-color: var(--nav-bg); /* #2E3440 */
+    color: white;
+    border: 2px solid var(--nav-bg);
+}
+
+/* Hover Effects */
+.hero-btn:hover {
+    transform: translateY(-3px); /* Lifts the button up */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* Increases shadow */
+    text-decoration: none;
+}
+
+.hero-btn.academic:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.hero-btn.games:hover {
+    background-color: #4C566A; /* Lighter grey on hover */
+    border-color: #4C566A;
+}
+
+/* Mobile Adjustment: Stack buttons on small screens */
+@media (max-width: 600px) {
+    .hero-btn-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+/* =========================================
+   FEATURED DOTS (For Important Projects)
+   ========================================= */
+
+/* The "Important" Dot (Gold) */
+.dot.featured {
+    background-color: #f1c40f; /* Gold color */
+    border: 1px solid #d4ac0d; /* Darker gold border */
+    width: 14px;  /* Slightly bigger than normal dots */
+    height: 14px;
+    box-shadow: 0 0 4px rgba(241, 196, 15, 0.6); /* Glow effect */
+}
+
+/* Hover Effect for Featured Dots */
+.dot.featured:hover {
+    background-color: #f39c12; /* Orange-Gold */
+    transform: scale(1.3);
+}
+
+/* Active State for Featured Dots (When you are ON that slide) */
+.dot.featured.active {
+    background-color: #e67e22; /* Burnt Orange to show it's selected */
+    transform: scale(1.4);
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.8);
+}
+
+/* =========================================
+   CUSTOM TOOLTIPS FOR DOTS (Conditional)
+   ========================================= */
+
+/* 1. Set position relative so the tooltip knows where to sit */
+.dot {
+    position: relative; 
+}
+
+/* 2. Create the Tooltip Bubble 
+   ONLY if data-title exists AND is not empty */
+.dot[data-title]:not([data-title=""]):hover::after {
+    content: attr(data-title); 
+    
+    position: absolute;
+    bottom: 150%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    
+    background-color: #2E3440; 
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap; 
+    z-index: 100;
+    pointer-events: none; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    
+    opacity: 0;
+    animation: fadeInTooltip 0.2s forwards;
+}
+
+/* 3. Create the Arrow 
+   ONLY if data-title exists AND is not empty */
+.dot[data-title]:not([data-title=""]):hover::before {
+    content: "";
+    position: absolute;
+    bottom: 80%; 
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #2E3440 transparent transparent transparent; 
+    
+    opacity: 0;
+    animation: fadeInTooltip 0.2s forwards;
+}
+
+@keyframes fadeInTooltip {
+    to { opacity: 1; bottom: 130%; } 
 }

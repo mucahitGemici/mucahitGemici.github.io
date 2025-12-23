@@ -26,6 +26,10 @@ function moveSlide(carouselId, direction) {
     slides.forEach((slide, index) => {
         if (slide.classList.contains('active')) {
             activeIndex = index;
+            
+            // NEW: Stop video on this slide before hiding it
+            stopMedia(slide);
+
             // Hide current slide & dot
             slide.classList.remove('active');
             if (dots[index]) dots[index].classList.remove('active');
@@ -49,10 +53,64 @@ function currentSlide(carouselId, index) {
     const dots = container.querySelectorAll('.dot');
     
     // Deactivate all
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach(slide => {
+        // NEW: Stop video if this slide was active
+        if (slide.classList.contains('active')) {
+            stopMedia(slide);
+        }
+        slide.classList.remove('active');
+    });
+
     dots.forEach(dot => dot.classList.remove('active'));
 
     // Activate selected
     if (slides[index]) slides[index].classList.add('active');
     if (dots[index]) dots[index].classList.add('active');
 }
+
+// 4. HELPER: STOP MEDIA (VIDEOS & IFRAMES)
+function stopMedia(slide) {
+    if (!slide) return;
+
+    // A. Pause HTML5 Videos (<video>)
+    const videos = slide.querySelectorAll('video');
+    videos.forEach(video => {
+        video.pause();
+    });
+
+    // B. Stop YouTube/Vimeo Iframes
+    // The simplest way to stop an iframe video without an API is to re-assign its source.
+    const iframes = slide.querySelectorAll('iframe');
+    iframes.forEach(iframe => {
+        const currentSrc = iframe.src;
+        iframe.src = currentSrc; 
+    });
+}
+
+// Function to handle the Success Card auto-rotation
+function startSuccessCarousels() {
+    const carousels = document.querySelectorAll('.auto-success-card');
+
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('.success-slide');
+        if (slides.length <= 1) return; // No need to rotate if only 1 image
+
+        let currentIndex = 0;
+
+        setInterval(() => {
+            // Remove active class from current
+            slides[currentIndex].classList.remove('active');
+
+            // Calculate next index
+            currentIndex = (currentIndex + 1) % slides.length;
+
+            // Add active class to next
+            slides[currentIndex].classList.add('active');
+        }, 5000); 
+    });
+}
+
+// Start the carousels when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    startSuccessCarousels();
+});

@@ -26,11 +26,20 @@
             <div class="container">
                 <h1>My Academic Research and Game Projects</h1>
             </div>
+
+            <div class="hero-btn-group">
+                <a href="#academic-projects" class="hero-btn academic">
+                    <i class="fas fa-graduation-cap"></i> Academic Research
+                </a>
+                <a href="#game-projects" class="hero-btn games">
+                    <i class="fas fa-gamepad"></i> Game Development
+                </a>
+            </div>
         </header>
 
         <main> 
             
-            <section class="content-section">
+            <section class="content-section" id="academic-projects">
                 <h2>Academic Research</h2>
                 
                 <div class="carousel-container" id="research-carousel">
@@ -151,17 +160,17 @@
                     <button class="nav-btn next" onclick="moveSlide('research-carousel', 1)">&#10095;</button>
 
                     <div class="carousel-dots">
-                        <span class="dot active" onclick="currentSlide('research-carousel', 0)"></span>
-                        <span class="dot" onclick="currentSlide('research-carousel', 1)"></span>
+                        <span class="dot featured active" onclick="currentSlide('research-carousel', 0)" data-title="Google Funded"></span>
+                        <span class="dot featured" onclick="currentSlide('research-carousel', 1)" data-title="Google Funded"></span>
                         <span class="dot" onclick="currentSlide('research-carousel', 2)"></span>
-                        <span class="dot" onclick="currentSlide('research-carousel', 3)"></span>
+                        <span class="dot featured" onclick="currentSlide('research-carousel', 3)" data-title="Award Winner"></span>
                     </div>
                 </div>
             </section>
 
             <hr>
 
-            <section class="content-section">
+            <section class="content-section" id="game-projects">
                 <h2>Game Development</h2>
                 
                 <div class="carousel-container" id="games-carousel">
@@ -438,9 +447,370 @@
                             </div>
                         </div>
 
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <iframe width="100%" height="250" src="https://www.youtube.com/embed/UW2Ix0SxIMY?si=x9TMgSY8NIXPoXkH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            
+                                <div class="photo-viewer-main">
+                                    <img id="g2-main-img" src="website-images/the-arena/the-arena-1.png" alt="Main view" width="450">
+                                </div>
+                        
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/the-arena/the-arena-1.png" class="thumb active" onclick="switchPhoto('g2-main-img', this)">
+                                    <img src="website-images/the-arena/the-arena-2.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                    <img src="website-images/the-arena/the-arena-3.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                    <img src="website-images/the-arena/the-arena-4.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                    <img src="website-images/the-arena/the-arena-5.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                </div>
+                            </div>
+                            
+                            <div class="slide-content-game">
+                                <h3>The Arena</h3>
+                                
+                                <div class="game-stats-grid">
+                                    <div class="stat-box info">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <span>Student Project</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Lead Developer</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-paint-brush"></i>
+                                        <span>3D Art & Texturing</span>
+                                    </div>
+                                </div>
+                        
+                                <span class="tag">First-Person Melee / Fantasy / Custom Assets</span>
+                        
+                                <p>The Arena is a first-person fighting game developed in collaboration with <strong>Faruk Güç</strong> as a semester project for the CE469 Game Programming course. It features immersive combat mechanics within a custom-built fantasy setting. This project was a career milestone, as the technical and artistic skills showcased here directly led to my first professional role as a game developer.</p>
+                                
+                                <h4>Key Mechanics & Features:</h4>
+                                <ul class="game-features-list">
+                                    <li><strong>Dynamic Combat:</strong> Fight using distinct classes including Two-Handed Swords, Spears, and Sword & Shield.</li>
+                                    <li><strong>Environmental Tactics:</strong> Utilize activatable traps within the arena to gain a strategic advantage.</li>
+                                    <li><strong>Custom 3D Pipeline:</strong> Features an explorable village and a custom arena, where I modeled and textured the arena structure and traps from scratch.</li>
+                                </ul>
+                        
+                                <div class="tech-stack-row">
+                                    <strong>Tech Stack:</strong> 
+                                    <span class="mini-tag">Unity 3D</span>
+                                    <span class="mini-tag">C#</span>
+                                    <span class="mini-tag">Blender</span>
+                                    <span class="mini-tag">Substance Painter</span>
+                                </div>
+                                
+                                <div style="margin-top: 15px;">
+                                    <a href="https://notsailor.itch.io/the-arena" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
+                                </div>
+
+                                </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <div class="youtube-link-card">
+                                    <a href="https://www.youtube.com/watch?v=YhS1USq2dec" target="_blank" class="video-link-wrapper">
+                                        <img src="https://img.youtube.com/vi/YhS1USq2dec/maxresdefault.jpg" alt="Playthrough by Vampirschi Gaming" class="main-media" style="object-fit: cover;">
+                                        
+                                        <div class="play-overlay">
+                                            <i class="fab fa-youtube"></i>
+                                            <span>Watch Playthrough by Vampirschi Gaming</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                                <div class="photo-viewer-main">
+                                    <img id="g3-main-img" src="website-images/the-wizard/the-wizard-images-1.png" alt="Main view" width="450">
+                                </div>
+                        
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/the-wizard/the-wizard-images-1.png" class="thumb active" onclick="switchPhoto('g3-main-img', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-2.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-3.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-4.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-5.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                </div>
+                            </div>
+                            
+                            <div class="slide-content-game">
+                                <h3>The Wizard</h3>
+                                
+                                <div class="game-stats-grid">
+                                    <div class="stat-box info">
+                                        <i class="fas fa-rocket"></i>
+                                        <span>First Project</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Co-Developer</span>
+                                    </div>
+                                </div>
+                        
+                                <span class="tag">2.5D Action-Adventure / Elemental Combat / Indie Showcase</span>
+                        
+                                <p>The Wizard marks the very beginning of my game development journey. Built in collaboration with <strong>Faruk Güç</strong> after only one month of learning Unity, this project utilizes 3D assets within a 2D gameplay loop (2.5D). Despite our limited experience at the time, we managed to create a cohesive experience that even caught the attention of content creators, featuring a playthrough by YouTuber <strong>Vampirschi Gaming</strong>.</p>
+                                
+                                <h4>Key Mechanics & Features:</h4>
+                                <ul class="game-features-list">
+                                    <li><strong>Elemental Strategy:</strong> Combat requires careful thought—using fire attacks on fire enemies will heal them instead of dealing damage.</li>
+                                    <li><strong>Cinematic Elements:</strong> Features an introductory cutscene and a challenging mini-boss fight to drive the narrative.</li>
+                                    <li><strong>Indie Feature:</strong> The game was discovered and played by the indie gaming community on YouTube.</li>
+                                </ul>
+                        
+                                <div class="tech-stack-row">
+                                    <strong>Tech Stack:</strong> 
+                                    <span class="mini-tag">Unity 3D</span>
+                                    <span class="mini-tag">C#</span>
+                                </div>
+                                
+                                <div style="margin-top: 15px;">
+                                    <a href="https://notsailor.itch.io/the-wizard-1" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <div class="auto-success-card">
+    
+                                    <div class="success-slide active">
+                                        <img src="website-images/teknofest-1.jpeg" alt="Teknofest Exhibition" class="contain-mode"> <div class="success-caption">
+                                            <i class="fas fa-camera"></i> Exhibited at Teknofest 2021
+                                        </div>
+                                    </div>
+                                
+                                    <a href="https://www.linkedin.com/posts/m%C3%BCcahit-gemici-a7b613180_as-i-mentioned-before-im-in-the-new-blog-activity-6856569816199831552--AO6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrOMz8BzXyrPfYDi_BErTN2aLgzHs_I8pg" target="_blank" class="success-slide">
+                                        <img src="website-images/nextmind-blogpost-2.jpeg" alt="NextMind Blog Feature" style="object-position: top;" class="contain-mode">
+                                        <div class="success-caption">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i> Featured in Official NextMind Blog
+                                            <span class="tiny-text">(Click to Verify)</span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.linkedin.com/posts/m%C3%BCcahit-gemici-a7b613180_as-i-mentioned-before-im-in-the-new-blog-activity-6856569816199831552--AO6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrOMz8BzXyrPfYDi_BErTN2aLgzHs_I8pg" target="_blank" class="success-slide">
+                                        <img src="website-images/nextmind-blogpost.jpeg" alt="NextMind Blog Feature" style="object-position: top;" class="contain-mode">
+                                        <div class="success-caption">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i> Featured in Official NextMind Blog
+                                            <span class="tiny-text">(Click to Verify)</span>
+                                        </div>
+                                    </a>
+                                
+                                </div>
+                                
+                                <div class="photo-viewer-main">
+                                    <img id="g4-main-img" src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-1.png" alt="Main view" width="450">
+                                </div>
+                        
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-1.png" class="thumb active" onclick="switchPhoto('g4-main-img', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-2.png" class="thumb" onclick="switchPhoto('g4-main-img', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-3.png" class="thumb" onclick="switchPhoto('g4-main-img', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-4.png" class="thumb" onclick="switchPhoto('g4-main-img', this)">
+                                    </div>
+                            </div>
+                            
+                            <div class="slide-content-game">
+                                <h3>Platformer Game for NextMind</h3>
+                                
+                                <div class="game-stats-grid">
+                                    <div class="stat-box achievement">
+                                        <i class="fas fa-award"></i>
+                                        <span>Teknofest 2021</span>
+                                    </div>
+                                    <div class="stat-box achievement">
+                                        <i class="fas fa-star"></i>
+                                        <span>Official Feature</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Internship</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-brain"></i>
+                                        <span>BCI</span>
+                                    </div>
+                                </div>
+                        
+                                <span class="tag">Puzzle Platformer / Hybrid Control / Brain-Computer Interface</span>
+                        
+                                <p>This project is a hybrid-control puzzle platformer that combines traditional keyboard inputs with direct brain-computer interface (BCI) mechanics. I developed this game using Unity and the NextMind API, handling all programming and 3D modeling personally. The project was not only selected for exhibition at <strong>Teknofest 2021</strong> by the Digital Transformation Office of the Presidency of Turkey but was also <strong>featured in the official NextMind blog</strong> as a prime example of innovative BCI implementation.</p>
+                                
+                                <h4>Key Mechanics & Features:</h4>
+                                <ul class="game-features-list">
+                                    <li><strong>Hybrid Controls:</strong> Players use the keyboard for movement while using the NextMind BCI device for environmental interaction.</li>
+                                    <li><strong>Neuro-Interaction:</strong> Obstacles such as rocks and barriers are overcome by mentally "focusing" on them to trigger actions via brain signals.</li>
+                                    <li><strong>Solo Development:</strong> I was responsible for the entire pipeline, including gameplay programming, BCI integration, and 3D asset creation.</li>
+                                </ul>
+                        
+                                <div class="tech-stack-row">
+                                    <strong>Tech Stack:</strong> 
+                                    <span class="mini-tag">Unity 3D</span>
+                                    <span class="mini-tag">C#</span>
+                                    <span class="mini-tag">NextMind SDK</span>
+                                    <span class="mini-tag">Blender</span>
+                                </div>
+                                
+                                </div>
+                        </div>
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <div class="auto-success-card">
+    
+                                    <a href="https://www.linkedin.com/posts/m%C3%BCcahit-gemici-a7b613180_as-i-mentioned-before-im-in-the-new-blog-activity-6856569816199831552--AO6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrOMz8BzXyrPfYDi_BErTN2aLgzHs_I8pg" target="_blank" class="success-slide active">
+                                        <img src="website-images/nextmind-blogpost-2.jpeg" alt="NextMind Blog Feature" style="object-position: top;" class="contain-mode">
+                                        <div class="success-caption">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i> Featured in Official NextMind Blog
+                                            <span class="tiny-text">(Click to Verify)</span>
+                                        </div>
+                                    </a>
+                                
+                                    <a href="https://www.linkedin.com/posts/m%C3%BCcahit-gemici-a7b613180_as-i-mentioned-before-im-in-the-new-blog-activity-6856569816199831552--AO6/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrOMz8BzXyrPfYDi_BErTN2aLgzHs_I8pg" target="_blank" class="success-slide">
+                                        <img src="website-images/nextmind-blogpost.jpeg" alt="NextMind Blog Feature" style="object-position: top;" class="contain-mode">
+                                        <div class="success-caption">
+                                            <i class="fas fa-star" style="color: #ffc107;"></i> Featured in Official NextMind Blog
+                                            <span class="tiny-text">(Click to Verify)</span>
+                                        </div>
+                                    </a>
+                                
+                                </div>
+                        
+                                <div class="photo-viewer-main">
+                                    <img id="g5-main-img" src="website-images/tic-tac-toe/tic-tac-toe-1.png" alt="Main view" width="450">
+                                </div>
+                        
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/tic-tac-toe/tic-tac-toe-1.png" class="thumb active" onclick="switchPhoto('g5-main-img', this)">
+                                    <img src="website-images/tic-tac-toe/tic-tac-toe-2.png" class="thumb" onclick="switchPhoto('g5-main-img', this)">
+                                </div>
+                            </div>
+                            
+                            <div class="slide-content-game">
+                                <h3>Tic Tac Toe With NextMind</h3>
+                                
+                                <div class="game-stats-grid">
+                                    <div class="stat-box achievement">
+                                        <i class="fas fa-star"></i>
+                                        <span>Official Feature</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Internship</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-brain"></i>
+                                        <span>BCI</span>
+                                    </div>
+                
+                                </div>
+                        
+                                <span class="tag">Experimental / Hands-Free / Brain-Computer Interface</span>
+                        
+                                <p>Tic Tac Toe With NextMind is an experimental project developed to explore the potential of Brain-Computer Interfaces (BCI) in gaming. Built in just a few days, this project serves as a technical proof-of-concept for hands-free interaction. It demonstrates my ability to quickly adapt to new hardware SDKs and implement complex input systems into a functioning game loop—an effort that earned recognition and a <strong>feature in the official NextMind company blog</strong>.</p>
+                                
+                                <h4>Key Mechanics & Features:</h4>
+                                <ul class="game-features-list">
+                                    <li><strong>Visual Attention Control:</strong> Players place their marks on the grid entirely hands-free, simply by focusing their gaze and concentration on a specific square.</li>
+                                    <li><strong>Neuro-Feedback Loop:</strong> The game utilizes the NextMind device to translate real-time brain signals into game input.</li>
+                                    <li><strong>Solo Pipeline:</strong> I handled the entire development process, including programming the BCI integration and creating the 3D assets.</li>
+                                </ul>
+                        
+                                <div class="tech-stack-row">
+                                    <strong>Tech Stack:</strong> 
+                                    <span class="mini-tag">Unity 3D</span>
+                                    <span class="mini-tag">C#</span>
+                                    <span class="mini-tag">NextMind SDK</span>
+                                    <span class="mini-tag">Blender</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-slide">
+                            <div class="slide-gallery">
+                                <video autoplay muted loop playsinline controls class="main-media" width="100%" height="250" controls>
+                                    <source src="website-videos/game-modelled-by-ai.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            
+                                <div class="photo-viewer-main">
+                                    <img id="g6-main-img" src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" alt="Main view" width="450">
+                                </div>
+                        
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" class="thumb active" onclick="switchPhoto('g6-main-img', this)">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-1.png" class="thumb" onclick="switchPhoto('g6-main-img', this)">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-3.png" class="thumb" onclick="switchPhoto('g6-main-img', this)">
+                                </div>
+                            </div>
+                            
+                            <div class="slide-content-game">
+                                <h3>Game Modelled by AI</h3>
+                                
+                                <div class="game-stats-grid">
+                                    <div class="stat-box info">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Internship</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-microchip"></i>
+                                        <span>Generative AI</span>
+                                    </div>
+                                    <div class="stat-box info">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Aug 2021</span>
+                                    </div>
+                                </div>
+                        
+                                <span class="tag">Space Shooter / AI Pipeline / Experimental / NSVF</span>
+                        
+                                <p><strong>Game Modelled by AI</strong> is an experimental R&D project developed during my internship to explore the potential of automating 3D asset creation. <strong>Created in August 2021</strong>—well before the current boom of generative 3D—this project served as a pioneering proof-of-concept for an AI-driven pipeline.</p>
+                                
+                                <h4>Key Mechanics & Features:</h4>
+                                <ul class="game-features-list">
+                                    <li><strong>AI-Generated Assets:</strong> Leveraged <strong>Neural Sparse Voxel Fields (NSVF)</strong> and <strong>Polygen</strong> to create 3D meshes (furniture, debris, characters) without manual modeling.</li>
+                                    <li><strong>Space Shooter Gameplay:</strong> A fully playable loop where players fly a ship and destroy waves of AI-generated obstacles.</li>
+                                    <li><strong>Automated Pipeline:</strong> Demonstrated how raw ML outputs could be imported, textured, and used in a real-time Unity environment.</li>
+                                </ul>
+                        
+                                <div class="tech-stack-row">
+                                    <strong>Tech Stack:</strong> 
+                                    <span class="mini-tag">Unity 3D</span>
+                                    <span class="mini-tag">C#</span>
+                                    <span class="mini-tag">Python (ML)</span>
+                                    <span class="mini-tag">NSVF & Polygen</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <button class="nav-btn next" onclick="moveSlide('games-carousel', 1)">&#10095;</button>
+                    
+                    <div class="carousel-dots">
+        
+                        <span class="dot featured active" onclick="currentSlide('games-carousel', 0)" data-title="10k+ Downloads"></span>
+                        
+                        <span class="dot featured" onclick="currentSlide('games-carousel', 1)" data-title="$0.31 CPI"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 2)"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 3)"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 4)"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 5)"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 6)"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 7)"></span>
+                        
+                        <span class="dot featured" onclick="currentSlide('games-carousel', 8)" data-title="Teknofest Demo + NextMind Featured"></span>
+                        
+                        <span class="dot featured" onclick="currentSlide('games-carousel', 9)" data-title="NextMind Featured"></span>
+                        
+                        <span class="dot" onclick="currentSlide('games-carousel', 10)"></span>
+                
+                    </div>
                 </div>
             </section>
 
