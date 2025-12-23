@@ -114,3 +114,63 @@ function startSuccessCarousels() {
 document.addEventListener('DOMContentLoaded', () => {
     startSuccessCarousels();
 });
+
+function toggleUpdates() {
+    const hiddenDiv = document.getElementById('older-updates');
+    const btn = document.getElementById('toggle-updates-btn');
+
+    if (hiddenDiv.style.display === "block") {
+        // Hide them
+        hiddenDiv.style.display = "none";
+        btn.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+    } else {
+        // Show them
+        hiddenDiv.style.display = "block";
+        btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+    }
+}
+
+/* =========================================
+   MEDIA TOGGLE LOGIC (Video <-> Images)
+   ========================================= */
+   function switchMediaView(btn, viewType) {
+    // 1. Find the parent slide
+    // We traverse up to find the '.slide-gallery' container
+    const galleryContainer = btn.closest('.slide-gallery');
+    
+    // 2. Get the containers
+    const videoView = galleryContainer.querySelector('.video-view');
+    const imageView = galleryContainer.querySelector('.image-view');
+    
+    // 3. Get the buttons
+    const btnGroup = btn.parentElement;
+    const allBtns = btnGroup.querySelectorAll('.media-toggle-btn');
+
+    // 4. RESET: Remove active class from all buttons
+    allBtns.forEach(b => b.classList.remove('active'));
+    // Set clicked button to active
+    btn.classList.add('active');
+
+    // 5. TOGGLE LOGIC
+    if (viewType === 'video') {
+        // Show Video, Hide Images
+        if(videoView) videoView.classList.remove('hidden-view');
+        if(imageView) imageView.classList.add('hidden-view');
+    } else {
+        // Show Images, Hide Video
+        if(imageView) imageView.classList.remove('hidden-view');
+        if(videoView) videoView.classList.add('hidden-view');
+
+        // IMPORTANT: Pause the video if we switch to images
+        if(videoView) {
+            const video = videoView.querySelector('video');
+            const iframe = videoView.querySelector('iframe');
+            if(video) video.pause();
+            if(iframe) {
+                // Reset src to stop youtube video
+                const src = iframe.src;
+                iframe.src = src; 
+            }
+        }
+    }
+}
