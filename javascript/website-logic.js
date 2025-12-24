@@ -206,3 +206,49 @@ function toggleUpdates() {
         console.error("Could not find section:", targetId);
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    initLazyMedia();
+});
+
+function initLazyMedia() {
+    const isMobile = window.innerWidth <= 900; // Matches your CSS breakpoint
+    
+    let targetContainer;
+    
+    if (isMobile) {
+        // We are on mobile: Only load mobile videos
+        //console.log("Mobile detected: Loading mobile assets...");
+        targetContainer = document.querySelector('.mobile-view-container');
+    } else {
+        // We are on desktop: Only load desktop videos
+        //console.log("Desktop detected: Loading desktop assets...");
+        targetContainer = document.querySelector('.desktop-view-container');
+    }
+
+    if (!targetContainer) return;
+
+    // 1. Find all lazy videos/iframes INSIDE the active view
+    const lazyElements = targetContainer.querySelectorAll('.lazy-media');
+
+    lazyElements.forEach(el => {
+        // A. Handle Videos
+        if (el.tagName === 'VIDEO') {
+            const source = el.querySelector('source');
+            if (source && source.dataset.src) {
+                source.src = source.dataset.src; // Swap data-src to src
+                el.load(); // Tell browser to load it now
+                
+                // Optional: Autoplay if it's meant to be autoplay
+                // (Only works if video is muted)
+                //el.play().catch(e => console.log("Autoplay blocked:", e));
+            }
+        } 
+        // B. Handle Iframes (YouTube)
+        else if (el.tagName === 'IFRAME') {
+            if (el.dataset.src) {
+                el.src = el.dataset.src;
+            }
+        }
+    });
+}

@@ -486,7 +486,7 @@ hr { border: 0; height: 1px; background: var(--border); margin: 2rem 0; }
 .stat-box.info { background-color: #eaf6ff !important; border: 1px solid #3498db !important; color: #154360 !important; }
 .stat-box.info i { color: #2980b9 !important; }
 
-.award-badge { display: inline-block; background-color: #f1c40f !important; color: #fff !important; font-weight: bold; font-size: 0.85rem; padding: 2px 8px; border-radius: 4px; margin-bottom: 5px; margin-right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.award-badge { display: inline-block; background-color: #f1c40f !important; color: #fff !important; font-weight: bold; font-size: 0.85rem; padding: 2px 6px; border-radius: 4px; margin-bottom: 5px; margin-right: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 .google-badge { background-color: #4285F4 !important; color: white !important; }
 
 .game-features-list { list-style: none; padding: 0; margin-bottom: 20px; }
@@ -842,4 +842,113 @@ hr.cv-divider {
     gap: 10px;
     margin-bottom: 15px;
     flex-wrap: wrap;
+}
+
+/* =========================================
+   FIX: REMOVE BLACK BACKGROUNDS
+   ========================================= */
+
+/* Desktop & General Media */
+.slide-gallery video.main-media,
+.slide-gallery iframe.main-media,
+.slide-gallery img.main-media,
+.photo-viewer-main img,
+.photo-viewer-main,
+.youtube-link-card {
+    background-color: #f8f9fa !important; /* Changed from #000 to Light Gray */
+    border-color: #eee !important;        /* Softer border */
+}
+
+/* Mobile Media Wrapper */
+.mobile-media-wrapper {
+    background-color: #f8f9fa !important; /* Changed from #000 */
+    border-bottom: 1px solid #eee;
+}
+
+/* Optional: Ensure images cover the area nicely without distortion */
+.mobile-media-wrapper img, 
+.mobile-media-wrapper video {
+    background-color: transparent; 
+}
+
+/* =========================================
+   FIX: MOBILE SPACING & WIDTH
+   ========================================= */
+   @media (max-width: 600px) {
+    
+    /* 1. Expand Main Container */
+    main {
+        width: 100% !important;    /* Force full width */
+        padding: 0 12px !important; /* Reduce outer padding (was 20px) */
+        max-width: 100% !important;
+    }
+
+    /* 2. Expand Mobile Cards */
+    .mobile-project-card {
+        margin-bottom: 20px;
+        border-radius: 6px; /* Slightly less rounded corners look wider */
+    }
+
+    /* 3. Reduce Card Internal Padding */
+    .mobile-card-content {
+        padding: 15px !important; /* Reduced from 20px */
+    }
+
+    /* 4. Make Text Fill the Space */
+    .mobile-card-content p {
+        font-size: 0.95rem; /* Ensure readable size */
+        text-align: left;   /* Ensure text isn't centered weirdly */
+    }
+
+    /* 5. Adjust Hero Section for Mobile */
+    .hero-section {
+        padding: 1rem 0.5rem; /* Reduce hero padding */
+    }
+    
+    .hero-section .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/* Find your existing .mobile-card-content h3 rule and update font-size to this: */
+.mobile-card-content h3 {
+    /* "clamp" takes 3 values: Minimum size, Preferred Size (viewport width), Max size */
+    font-size: clamp(1.1rem, 5vw, 1.4rem); 
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+/* =========================================
+   FIX: MOBILE BADGES & STATS SPACING
+   ========================================= */
+   @media (max-width: 600px) {
+
+    /* 1. Fix Game Stat Boxes (The badges with icons) */
+    .mobile-card-content .game-stats-grid {
+        display: flex;
+        flex-wrap: wrap;  /* Allow them to drop to the next line */
+        gap: 8px;         /* Creates space between them vertically & horizontally */
+        margin-bottom: 12px;
+    }
+
+    .mobile-card-content .stat-box {
+        flex: 0 1 auto;   /* Stop them from stretching to fill the width */
+        width: auto;      /* Let them be only as wide as the text inside */
+        font-size: 0.8rem; /* Slightly smaller text for better fit */
+        padding: 6px 10px;
+    }
+
+    /* 2. Fix Academic Badges (e.g., "Funded by Google") */
+    .mobile-card-content .award-badge {
+        display: inline-block;
+        margin-bottom: 10px !important; /* Force space below the badge */
+        margin-right: 0; /* Remove right margin since it's likely on its own line */
+        width: fit-content; /* Don't stretch full width */
+    }
+
+    /* 3. Ensure Tags don't stick to descriptions */
+    .mobile-card-content .tag {
+        margin-bottom: 12px;
+        display: inline-block;
+    }
 }
