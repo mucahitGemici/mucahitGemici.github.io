@@ -60,12 +60,24 @@ nav {
     width: 95%;
 }
 
+/* Find the existing .logo rule and UPDATE it to look like this: */
 .logo {
+    display: flex;           /* Aligns image and text side-by-side */
+    align-items: center;     /* Centers them vertically */
+    gap: 10px;               /* Adds space between image and text */
+    
     font-weight: 700;
     font-size: 1.2rem;
     color: #fff !important;
     text-decoration: none !important;
     letter-spacing: 0.5px;
+}
+
+/* ADD this new rule below it to control the image size: */
+.logo img {
+    height: 32px;            /* Fits perfectly inside the navbar */
+    width: auto;             /* Maintains aspect ratio */
+    border-radius: 6px;      /* Slightly rounds the corners (optional) */
 }
 
 nav ul {
@@ -951,4 +963,224 @@ hr.cv-divider {
         margin-bottom: 12px;
         display: inline-block;
     }
+}
+/* =========================================
+   BEAUTIFIED CV STYLES (Add to bottom of CSS)
+   ========================================= */
+
+/* 1. Section Headers with Icons */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: 10px;
+}
+
+.section-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+    background: #eaf2fa;
+    width: 36px;
+    height: 36px;
+    
+    /* FIXED: Use inline-flex with !important to override FontAwesome defaults */
+    display: inline-flex !important; 
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 8px;
+    margin-right: 0; /* Ensure no extra spacing interferes */
+}
+
+.section-header h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1.4rem;
+}
+
+/* 2. The Timeline Layout */
+.timeline-wrapper {
+    position: relative;
+    padding-left: 0;
+}
+
+/* Vertical Line */
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    bottom: 0;
+    left: 7px; /* Position of the line */
+    width: 2px;
+    background: #E5E9F0; /* Nord Light Gray */
+    z-index: 0;
+}
+
+.cv-item {
+    position: relative;
+    padding-left: 35px; /* Space for the line/dots */
+    margin-bottom: 30px;
+}
+
+/* The Dot on the timeline */
+.cv-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.cv-item:hover::before {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(94, 129, 172, 0.2);
+}
+
+/* 3. Typography Hierarchy */
+.cv-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.cv-content h3 {
+    margin: 0 0 2px 0;
+    font-size: 1.15rem;
+    color: var(--text-main);
+}
+
+.cv-org {
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.cv-org .loc {
+    color: #9CA3AF;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.cv-content ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.cv-content ul li {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+/* 4. Highlight Item (for Incoming Role) */
+.highlight-item {
+    background: #f8fbff;
+    padding: 15px 15px 15px 35px; /* Add padding inside */
+    border-radius: 8px;
+    border: 1px dashed var(--accent);
+    margin-left: -10px; /* Pull back slightly to align */
+}
+.highlight-item .cv-item::before {
+    left: 10px; /* Adjust dot position for padding */
+}
+/* CSS Nesting fix for compatibility */
+.timeline-wrapper .highlight-item {
+    margin-left: 0;
+    padding-left: 35px;
+    border: 1px dashed var(--accent);
+    background: #fdfdfd;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+.status-badge.incoming {
+    background: #ebcb8b; /* Nord Yellow */
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* 5. Badge Row */
+.badge-row {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+/* 6. Skills Grid Dashboard */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #f9fafb;
+    border: 1px solid #E5E9F0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    background: #fff;
+    border-color: var(--accent);
+}
+
+.skill-icon {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.skill-card h4 {
+    font-size: 1rem;
+    margin: 0 0 10px 0;
+    color: var(--text-main);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.skill-tags span {
+    background: #fff;
+    border: 1px solid #d8dee9;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: var(--text-light);
+}
+
+/* Mobile Tweaks */
+@media (max-width: 600px) {
+    .timeline-wrapper::before { left: 7px; }
+    .cv-item { padding-left: 30px; }
+    .cv-date { font-size: 0.8rem; }
+    .skills-grid { grid-template-columns: 1fr; }
 }
