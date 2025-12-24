@@ -15,7 +15,7 @@
                 <a href="index.html" class="logo">M. Gemici</a>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV & Experience</a></li>
+                    <li><a href="cv.html">CV</a></li>
                     <li><a href="publications.html">Publications</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
                 </ul>
@@ -28,817 +28,1493 @@
             </div>
 
             <div class="hero-btn-group">
-                <a href="#academic-projects" class="hero-btn academic">
+                <a onclick="scrollToSection('academic-projects')" class="hero-btn academic" style="cursor: pointer;">
                     <i class="fas fa-graduation-cap"></i> Academic Research
                 </a>
-                <a href="#game-projects" class="hero-btn games">
+                
+                <a onclick="scrollToSection('game-projects')" class="hero-btn games" style="cursor: pointer;">
                     <i class="fas fa-gamepad"></i> Game Development
                 </a>
             </div>
         </header>
 
         <main> 
-            
-            <section class="content-section" id="academic-projects">
-                <h2>Academic Research</h2>
+
+            <div class="desktop-view-container">
+                <section class="content-section" id="academic-projects-desktop">
+                    <h2>Academic Research</h2>
+                    
+                    <div class="carousel-container" id="research-carousel">
+                        
+                        <button class="nav-btn prev" onclick="moveSlide('research-carousel', -1)">&#10094;</button>
+    
+                        <div class="slides-wrapper">
+                            
+                            <div class="project-slide active">
+                                <div class="slide-gallery">
                 
-                <div class="carousel-container" id="research-carousel">
-                    
-                    <button class="nav-btn prev" onclick="moveSlide('research-carousel', -1)">&#10094;</button>
-
-                    <div class="slides-wrapper">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" autoplay muted controls>
+                                            <source src="website-videos/feedback-visual-video.mp4">
+                                        </video>
+                                    </div>
                         
-                        <div class="project-slide active">
-                            <div class="slide-gallery">
-            
-                                <div class="video-view media-view">
-                                    <video class="main-media" autoplay muted controls>
-                                        <source src="website-videos/feedback-visual-video.mp4">
-                                    </video>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="p1-main-img" src="website-images/feedback-visual/feedback-1.png" alt="Main view">
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="p1-main-img" src="website-images/feedback-visual/feedback-1.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/feedback-visual/feedback-1.png" class="thumb active" onclick="switchPhoto('p1-main-img', this)">
+                                            <img src="website-images/feedback-visual/feedback-2.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                            <img src="website-images/feedback-visual/feedback-3.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                            <img src="website-images/feedback-visual/feedback-4.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
+                                        </div>
                                     </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/feedback-visual/feedback-1.png" class="thumb active" onclick="switchPhoto('p1-main-img', this)">
-                                        <img src="website-images/feedback-visual/feedback-2.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
-                                        <img src="website-images/feedback-visual/feedback-3.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
-                                        <img src="website-images/feedback-visual/feedback-4.png" class="thumb" onclick="switchPhoto('p1-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="slide-content">
-                                <h3>Before hands disappear: Effect of early warning visual feedback method for hand tracking failures in virtual reality</h3>
-                                <div class="award-badge google-badge">
-                                    <i class="fab fa-google"></i> Funded by Google
-                                </div>
-                                <p class="project-authors">
-                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz
-                                </p>
-                                <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
-                                <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
-                                <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="project-link">Read Paper &rarr;</a>
-                            </div>
-                        </div>
-
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-            
-                                <div class="video-view media-view">
-                                    <video class="main-media" autoplay muted controls>
-                                        <source src="website-videos/feedback-gaze.mp4">
-                                    </video>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="p2-main-img" src="website-images/feedback-gaze/feedback-gaze-1.png" alt="Main view">
-                                    </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/feedback-gaze/feedback-gaze-1.png" class="thumb active" onclick="switchPhoto('p2-main-img', this)">
-                                        <img src="website-images/feedback-gaze/feedback-gaze-2.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
-                                        <img src="website-images/feedback-gaze/feedback-gaze-3.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
                                     </div>
                                 </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="slide-content">
-                                <h3>Gaze Analysis in Early Warning Visual Feedback System for Hand Tracking Failures in Virtual Reality</h3>
-                                <div class="award-badge google-badge">
-                                    <i class="fab fa-google"></i> Funded by Google
-                                </div>
-                                <p class="project-authors">
-                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz
-                                </p>
-                                <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
-                                <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="project-link">Read Paper &rarr;</a>
-                            </div>
-                        </div>
-
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-            
-                                <div class="video-view media-view">
-                                    <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/N1DnMK9Q-sE?si=MaPutTEUx4ooVi0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="p3-main-img" src="website-images/sdf/sdf-1.png" alt="Main view">
+                                <div class="slide-content">
+                                    <h3>Before hands disappear: Effect of early warning visual feedback method for hand tracking failures in virtual reality</h3>
+                                    <div class="award-badge google-badge">
+                                        <i class="fab fa-google"></i> Funded by Google
                                     </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/sdf/sdf-1.png" class="thumb active" onclick="switchPhoto('p3-main-img', this)">
-                                        <img src="website-images/sdf/sdf-2.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
-                                        <img src="website-images/sdf/sdf-3.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz
+                                    </p>
+                                    <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
+                                    <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
+                                    <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="project-link">Read Paper &rarr;</a>
                                 </div>
                             </div>
-                            <div class="slide-content">
-                                <h3>Object Speed Control with a Signed Distance Field for Distant Mid-Air Object Manipulation in Virtual Reality</h3>
-                                <p class="project-authors">
-                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz
-                                </p>
-                                <span class="tag">Signed Distance Field / Mid-Air Manipulation</span>
-                                <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="project-link">Read Paper &rarr;</a>
-                            </div>
-                        </div>
-
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-            
-                                <div class="video-view media-view">
-                                    <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/Ds8FF037uS4?si=Im_2WJ6v1DrNmQb1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="p4-main-img" src="website-images/muscle-net/muscle-net-1.jpeg" alt="Main view">
-                                    </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/muscle-net/muscle-net-1.jpeg" class="thumb active" onclick="switchPhoto('p4-main-img', this)">
-                                        <img src="website-images/muscle-net/muscle-net-2.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
-                                        <img src="website-images/muscle-net/muscle-net-3.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
-                                        <img src="website-images/muscle-net/muscle-net-4.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="slide-content">
-                                <h3>MuscleNET: Smart Predictive Analysis for Muscular Activity Using Wearable Sensors</h3>
-                                <div class="award-badge">
-                                    <i class="fas fa-trophy"></i> Best Graduation Project Award (Kadir Has University, 2022)
-                                </div>
-                                <p class="project-authors">
-                                    <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Korkmaz, N.T. Ayhan, Ş. Soylu, A.S. Öğrenci
-                                </p>
-                                <span class="tag">Deep Learning / sEMG Signals / Real-Time Systems / Wearable Devices</span>
-                                <p>This project addresses the risk of sport-related injuries caused by unsupervised weight training by bridging the gap between wearable hardware and advanced machine learning. I helped design a custom wearable device using MyoWare muscle sensors and an Arduino Nano to collect real-time Surface Electromyography (sEMG) signals, which are transmitted via Bluetooth to a dedicated mobile application. To analyze this data, I implemented a dual-stage AI pipeline: Deep Neural Networks (DNN) to classify training quality (determining if the weight is optimal, too light, or too heavy) and Long Short-Term Memory (LSTM) networks to forecast potential injuries based on fatigue patterns. The system achieved an 85% accuracy rate in classifying training quality using data augmentation techniques, effectively acting as a "digital spotter" to ensure safe and efficient workouts.</p>
-                                <a href="https://ieeexplore.ieee.org/abstract/document/9925553" target="_blank" class="project-link">Read Paper &rarr;</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <button class="nav-btn next" onclick="moveSlide('research-carousel', 1)">&#10095;</button>
-
-                    <div class="carousel-dots">
-                        <span class="dot featured active" onclick="currentSlide('research-carousel', 0)" data-title="Google Funded"></span>
-                        <span class="dot featured" onclick="currentSlide('research-carousel', 1)" data-title="Google Funded"></span>
-                        <span class="dot" onclick="currentSlide('research-carousel', 2)"></span>
-                        <span class="dot featured" onclick="currentSlide('research-carousel', 3)" data-title="Award Winner"></span>
-                    </div>
-                </div>
-            </section>
-
-            <hr>
-
-            <section class="content-section" id="game-projects">
-                <h2>Game Development</h2>
+    
+                            <div class="project-slide">
+                                <div class="slide-gallery">
                 
-                <div class="carousel-container" id="games-carousel">
-                    
-                    <button class="nav-btn prev" onclick="moveSlide('games-carousel', -1)">&#10094;</button>
-
-                    <div class="slides-wrapper">
-
-                        <div class="project-slide active">
-                            <div class="slide-gallery">
-                                <div class="video-view media-view">
-                                    <video class="main-media" width="400" autoplay muted loop playsinline controls>
-                                        <source src="website-videos/garbage-vacuumer-video.mp4">
-                                    </video>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box achievement">
-                                        <i class="fas fa-download"></i>
-                                        <span>10k+ Downloads</span>
+                                    <div class="video-view media-view">
+                                        <video class="main-media" autoplay muted controls>
+                                            <source src="website-videos/feedback-gaze.mp4">
+                                        </video>
                                     </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-code"></i>
-                                        <span>Role: Full Dev</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Servo Studios</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-content-game">
-                                <h3>Garbage Vacuumer</h3>
-                                <span class="tag">Hyper-Casual / Idle Arcade / Cleaning Simulation</span>
-                                <p>Garbage Vacuumer is a successful hyper-casual title where players clean up clutter-filled cities. I designed and programmed the core mechanics and gameplay, collaborating with <strong>Moonee</strong> to refine the experience. The game features a satisfying loop where players collect debris, sell it for profit, and upgrade their vehicle from a basic vacuum car to heavy trucks and helicopters.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Vehicle Evolution:</strong> Progression from small vacuums to massive aerial cleaning drones.</li>
-                                    <li><strong>Upgrade System:</strong> Balanced economy allowing players to upgrade Storage, Area (range), and Power.</li>
-                                    <li><strong>Physics-Based Cleaning:</strong> Satisfying "sucking" mechanics for thousands of debris objects.</li>
-                                    <li><strong>Dynamic City Environment:</strong> Low-poly cityscapes that visually clear up as the player progresses.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="video-view media-view">
-                                    <video class="main-media" width="400" autoplay muted loop playsinline controls>
-                                        <source src="website-videos/shoot-and-cover-video.mp4">
-                                    </video>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box achievement">
-                                        <i class="fas fa-chart-line"></i>
-                                        <span>$0.31 CPI</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-code"></i>
-                                        <span>Role: Full Dev</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Servo Studios</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-content-game">
-                                <h3>Shoot & Cover</h3>
-                                <span class="tag">Third-Person Shooter / Tactical Action / Wave Defense</span>
-                                <p>Shoot & Cover was my final project at <strong>Servo Studios</strong>, co-developed with Moonee. While the publisher provided assets, I handled the <strong>full technical implementation</strong>. The game achieved a highly competitive <strong>$0.31 CPI</strong> during testing, leading the studio to self-publish the title before I departed for my academic career.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Tactical Cover System:</strong> Dynamic movement logic allowing players to dash between safe zones.</li>
-                                    <li><strong>Weapon Shop Economy:</strong> In-game store to unlock and equip diverse firearms (AKM, Shotguns) using match earnings.</li>
-                                    <li><strong>Enemy AI Waves:</strong> Tactical combat against waves of armed enemies requiring strategic positioning.</li>
-                                    <li><strong>Extraction Loop:</strong> Clear the area and reach the extraction vehicle to secure level progress.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="video-view media-view">
-                                    <video class="main-media" width="370" autoplay muted loop playsinline controls>
-                                        <source src="website-videos/sky-surfer-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-code"></i>
-                                        <span>Role: Full Dev</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Servo Studios</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-content-game">
-                                <h3>Sky Surfer</h3>
-                                <span class="tag">Hybrid Runner / Arcade Shooter / Aerial Combat</span>
-                                <p>For my third project at <strong>Servo Studios</strong>, I reimagined the mechanics of the hit game <em>Subway Surfers</em> within an aerial combat setting. Sky Surfer combines classic lane-based dodging with arcade shooter gameplay, challenging players to navigate tight city corridors while blasting through waves of enemy planes.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Lane-Based Dogfighting:</strong> Seamlessly merged endless runner movement with auto-firing combat mechanics.</li>
-                                    <li><strong>Risk & Reward System:</strong> "Close Pass" mechanic rewarding players for flying through tight gaps in walls.</li>
-                                    <li><strong>Enemy Behaviors:</strong> Varied enemy types including formation drones and high-speed "Kamikaze" divers.</li>
-                                    <li><strong>Procedural City Generation:</strong> Infinite low-poly cityscapes with randomized obstacle patterns.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="video-view media-view">
-                                    <video class="main-media" width="370" autoplay muted loop playsinline controls>
-                                        <source src="website-videos/tower-climber-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-code"></i>
-                                        <span>Role: Full Dev</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Servo Studios</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-content-game">
-                                <h3>Tower Climber</h3>
-                                <span class="tag">Hyper-Casual / Vertical Platformer / Reflex Arcade</span>
-                                <p>For my second project at <strong>Servo Studios</strong>, I built upon the simplicity of my previous work but introduced a new reflex-based mechanic. Players must use precise timing to launch across and latch onto the opposite wall. The game features different styles of infinite towers and a fully customizable character, allowing players to mix and match various outfits and accessories.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Precision Hook Mechanic:</strong> One-tap timing gameplay to launch ropes and latch onto safe wall sections.</li>
-                                    <li><strong>Dynamic Obstacles:</strong> Navigating through moving saws, rotating blades, and electrical traps.</li>
-                                    <li><strong>Infinite Progression:</strong> Procedurally generated towers with evolving visual themes (Brick, Sci-Fi).</li>
-                                    <li><strong>Combo System:</strong> Speed-based multipliers (up to x6) rewarding fast and flawless climbs.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="video-view media-view">
-                                    <video class="main-media" width="370" autoplay muted loop playsinline controls>
-                                        <source src="website-videos/reach-the-space-video.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-code"></i>
-                                        <span>Role: Full Dev</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Servo Studios</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-content-game">
-                                <h3>Reach the Space</h3>
-                                <span class="tag">Hyper-Casual / Vertical Endless Runner / Space Arcade</span>
-                                <p>A vertical endless runner developed for <strong>Servo Studios</strong>. Reach the Space challenges players to pilot a customizable ship as high as possible, dodging aerial and extraterrestrial threats while collecting coins and power-ups to extend their flight.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Atmospheric Transition:</strong> Seamless visual progression from blue skies to deep space environments.</li>
-                                    <li><strong>Dynamic Obstacles:</strong> Evolving threats ranging from biplanes in the lower atmosphere to UFOs in space.</li>
-                                    <li><strong>Fuel System:</strong> Critical resource management requiring players to collect fuel tanks to maintain altitude.</li>
-                                    <li><strong>Power-Up System:</strong> Magnets and coin multipliers to boost high-score potential.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                
-                                <div class="video-view media-view">
-                                    <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/LmWDfNjuaUQ" title="Castle Defender Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="g1-main-img" src="website-images/castle-defender/castle-defender-1.jpeg" alt="Main view">
-                                    </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/castle-defender/castle-defender-1.jpeg" class="thumb active" onclick="switchPhoto('g1-main-img', this)">
-                                        <img src="website-images/castle-defender/castle-defender-2.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
-                                        <img src="website-images/castle-defender/castle-defender-3.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
-                                        <img src="website-images/castle-defender/castle-defender-4.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-graduation-cap"></i>
-                                        <span>Student Project</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-user-friends"></i>
-                                        <span>Lead Developer</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-cubes"></i>
-                                        <span>3D Modeling</span>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="slide-content-game">
-                                <h3>Castle Defender</h3>
-                                <span class="tag">First-Person Tower Defense / Low Poly / Action Strategy</span>
-                                <p>Castle Defender is a unique blend of Tower Defense and FPS genres, developed as a student project to explore 3D modeling and design. Unlike traditional top-down games, it places the player directly on the battlefield. While I handled the core development and 3D modeling, I received support from <strong>Faruk Güç</strong> on especially weapon animations.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Active Combat:</strong> Defend the castle manually using Shotguns, Grenade Launchers, and a Giant Cannon.</li>
-                                    <li><strong>Economy Loop:</strong> Earn coins from defeated enemies to purchase essential ammo and upgrades.</li>
-                                    <li><strong>Immersive Perspective:</strong> A first-person take on the genre, putting you right in the middle of the enemy waves.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                                <div style="margin-top: 15px;">
-                                    <a href="https://notsailor.itch.io/castle-defender" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                
-                                <div class="video-view media-view">
-                                    <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/UW2Ix0SxIMY?si=x9TMgSY8NIXPoXkH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="g2-main-img" src="website-images/the-arena/the-arena-1.png" alt="Main view">
-                                    </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/the-arena/the-arena-1.png" class="thumb active" onclick="switchPhoto('g2-main-img', this)">
-                                        <img src="website-images/the-arena/the-arena-2.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
-                                        <img src="website-images/the-arena/the-arena-3.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
-                                        <img src="website-images/the-arena/the-arena-4.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
-                                        <img src="website-images/the-arena/the-arena-5.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-graduation-cap"></i>
-                                        <span>Student Project</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-user-friends"></i>
-                                        <span>Lead Developer</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-paint-brush"></i>
-                                        <span>3D Art & Texturing</span>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="slide-content-game">
-                                <h3>The Arena</h3>
-                                <span class="tag">First-Person Melee / Fantasy / Custom Assets</span>
-                                <p>The Arena is a first-person fighting game developed in collaboration with <strong>Faruk Güç</strong> as a semester project for the CE469 Game Programming course. It features immersive combat mechanics within a custom-built fantasy setting. This project was a career milestone, as the technical and artistic skills showcased here directly led to my first professional role as a game developer.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Dynamic Combat:</strong> Fight using distinct classes including Two-Handed Swords, Spears, and Sword & Shield.</li>
-                                    <li><strong>Environmental Tactics:</strong> Utilize activatable traps within the arena to gain a strategic advantage.</li>
-                                    <li><strong>Custom 3D Pipeline:</strong> Features an explorable village and a custom arena, where I modeled and textured the arena structure and traps from scratch.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Blender</span>
-                                    <span class="mini-tag">Substance Painter</span>
-                                </div>
-                                <div style="margin-top: 15px;">
-                                    <a href="https://notsailor.itch.io/the-arena" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                
-                                <div class="video-view media-view">
-                                    <div class="youtube-link-card">
-                                        <a href="https://www.youtube.com/watch?v=YhS1USq2dec" target="_blank" class="video-link-wrapper">
-                                            <img src="https://img.youtube.com/vi/YhS1USq2dec/maxresdefault.jpg" alt="Playthrough by Vampirschi Gaming" class="main-media" style="object-fit: cover;">
-                                            <div class="play-overlay">
-                                                <i class="fab fa-youtube"></i>
-                                                <span>Watch Playthrough</span>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                    
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="g3-main-img" src="website-images/the-wizard/the-wizard-images-1.png" alt="Main view">
-                                    </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/the-wizard/the-wizard-images-1.png" class="thumb active" onclick="switchPhoto('g3-main-img', this)">
-                                        <img src="website-images/the-wizard/the-wizard-images-2.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
-                                        <img src="website-images/the-wizard/the-wizard-images-3.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
-                                        <img src="website-images/the-wizard/the-wizard-images-4.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
-                                        <img src="website-images/the-wizard/the-wizard-images-5.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
-                                    </div>
-                                </div>
-                    
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-rocket"></i>
-                                        <span>First Project</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-user-friends"></i>
-                                        <span>Co-Developer</span>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="slide-content-game">
-                                <h3>The Wizard</h3>
-                                <span class="tag">2.5D Action-Adventure / Elemental Combat / Indie Showcase</span>
-                                <p>The Wizard marks the very beginning of my game development journey. Built in collaboration with <strong>Faruk Güç</strong> after only one month of learning Unity, this project utilizes 3D assets within a 2D gameplay loop (2.5D). Despite our limited experience at the time, we managed to create a cohesive experience that even caught the attention of content creators, featuring a playthrough by YouTuber <strong>Vampirschi Gaming</strong>.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Elemental Strategy:</strong> Combat requires careful thought—using fire attacks on fire enemies will heal them instead of dealing damage.</li>
-                                    <li><strong>Cinematic Elements:</strong> Features an introductory cutscene and a challenging mini-boss fight to drive the narrative.</li>
-                                    <li><strong>Indie Feature:</strong> The game was discovered and played by the indie gaming community on YouTube.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                </div>
-                                <div style="margin-top: 15px;">
-                                    <a href="https://notsailor.itch.io/the-wizard-1" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="image-view media-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="nm-main-img" src="website-images/teknofest-1.jpeg" alt="Main view">
-                                    </div>
-                                    
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/teknofest-1.jpeg" class="thumb active" onclick="switchPhoto('nm-main-img', this)">
-                                        
-                                        <img src="website-images/nextmind-blogpost.jpeg" class="thumb" onclick="switchPhoto('nm-main-img', this)" alt="Teknofest Exhibition">
-                                        
-                                        <img src="website-images/nextmind-blogpost-2.jpeg" class="thumb" onclick="switchPhoto('nm-main-img', this)" alt="NextMind Feature">
-                                        <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-1.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
-                                        <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-2.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
-                                        <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-3.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
-                                    </div>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box achievement">
-                                        <i class="fas fa-award"></i>
-                                        <span>Teknofest</span>
-                                    </div>
-                                    <div class="stat-box achievement">
-                                        <i class="fas fa-star"></i>
-                                        <span>Official Post</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Internship</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-brain"></i>
-                                        <span>BCI</span>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="slide-content-game">
-                                <h3>Platformer Game for NextMind</h3>
-                                <span class="tag">Puzzle Platformer / Hybrid Control / Brain-Computer Interface</span>
-                                <p>This project is a hybrid-control puzzle platformer that combines traditional keyboard inputs with direct brain-computer interface (BCI) mechanics. I developed this game using Unity and the NextMind API, handling all programming and 3D modeling personally. The project was not only selected for exhibition at <strong>Teknofest 2021</strong> by the Digital Transformation Office of the Presidency of Turkey but was also <strong>featured in the official NextMind blog</strong> as a prime example of innovative BCI implementation.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Hybrid Controls:</strong> Players use the keyboard for movement while using the NextMind BCI device for environmental interaction.</li>
-                                    <li><strong>Neuro-Interaction:</strong> Obstacles such as rocks and barriers are overcome by mentally "focusing" on them to trigger actions via brain signals.</li>
-                                    <li><strong>Solo Development:</strong> I was responsible for the entire pipeline, including gameplay programming, BCI integration, and 3D asset creation.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">NextMind SDK</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                <div class="image-view media-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="ttt-main-img" src="website-images/nextmind-blogpost.jpeg" alt="Main view">
-                                    </div>
-                                    
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/nextmind-blogpost.jpeg" class="thumb active" onclick="switchPhoto('ttt-main-img', this)">
-                                        
-                                        <img src="website-images/tic-tac-toe/tic-tac-toe-1.png" class="thumb" onclick="switchPhoto('ttt-main-img', this)" alt="NextMind Feature">
-                                        
-                                        <img src="website-images/tic-tac-toe/tic-tac-toe-2.png" class="thumb" onclick="switchPhoto('ttt-main-img', this)">
-                                    </div>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box achievement">
-                                        <i class="fas fa-star"></i>
-                                        <span>Official Post</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Internship</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-brain"></i>
-                                        <span>BCI</span>
-                                    </div>
-                                </div>
-                            </div>
-                    
-                            <div class="slide-content-game">
-                                <h3>Tic Tac Toe With NextMind</h3>
-                                <span class="tag">Experimental / Hands-Free / Brain-Computer Interface</span>
-                                <p>Tic Tac Toe With NextMind is an experimental project developed to explore the potential of Brain-Computer Interfaces (BCI) in gaming. Built in just a few days, this project serves as a technical proof-of-concept for hands-free interaction. It demonstrates my ability to quickly adapt to new hardware SDKs and implement complex input systems into a functioning game loop—an effort that earned recognition and a <strong>feature in the official NextMind company blog</strong>.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>Visual Attention Control:</strong> Players place their marks on the grid entirely hands-free, simply by focusing their gaze and concentration on a specific square.</li>
-                                    <li><strong>Neuro-Feedback Loop:</strong> The game utilizes the NextMind device to translate real-time brain signals into game input.</li>
-                                    <li><strong>Solo Pipeline:</strong> I handled the entire development process, including programming the BCI integration and creating the 3D assets.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">NextMind SDK</span>
-                                    <span class="mini-tag">Blender</span>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="project-slide">
-                            <div class="slide-gallery">
-                                
-                                <div class="video-view media-view">
-                                    <video class="main-media" controls>
-                                        <source src="website-videos/game-modelled-by-ai.mp4" type="video/mp4">
-                                    </video>
-                                </div>
                         
-                                <div class="image-view media-view hidden-view">
-                                    <div class="photo-viewer-main">
-                                        <img id="ai-main" src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" alt="Main view">
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="p2-main-img" src="website-images/feedback-gaze/feedback-gaze-1.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/feedback-gaze/feedback-gaze-1.png" class="thumb active" onclick="switchPhoto('p2-main-img', this)">
+                                            <img src="website-images/feedback-gaze/feedback-gaze-2.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
+                                            <img src="website-images/feedback-gaze/feedback-gaze-3.png" class="thumb" onclick="switchPhoto('p2-main-img', this)">
+                                        </div>
                                     </div>
-                                    <div class="photo-thumbnails">
-                                        <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" class="thumb active" onclick="switchPhoto('ai-main', this)">
-                                        <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-1.png" class="thumb" onclick="switchPhoto('ai-main', this)">
-                                        <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-3.png" class="thumb" onclick="switchPhoto('ai-main', this)">
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Gaze Analysis in Early Warning Visual Feedback System for Hand Tracking Failures in Virtual Reality</h3>
+                                    <div class="award-badge google-badge">
+                                        <i class="fab fa-google"></i> Funded by Google
+                                    </div>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz
+                                    </p>
+                                    <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
+                                    <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="project-link">Read Paper &rarr;</a>
+                                </div>
+                            </div>
+    
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/N1DnMK9Q-sE?si=MaPutTEUx4ooVi0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                        
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="p3-main-img" src="website-images/sdf/sdf-1.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/sdf/sdf-1.png" class="thumb active" onclick="switchPhoto('p3-main-img', this)">
+                                            <img src="website-images/sdf/sdf-2.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
+                                            <img src="website-images/sdf/sdf-3.png" class="thumb" onclick="switchPhoto('p3-main-img', this)">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Object Speed Control with a Signed Distance Field for Distant Mid-Air Object Manipulation in Virtual Reality</h3>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz
+                                    </p>
+                                    <span class="tag">Signed Distance Field / Mid-Air Manipulation</span>
+                                    <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="project-link">Read Paper &rarr;</a>
+                                </div>
+                            </div>
+    
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/Ds8FF037uS4?si=Im_2WJ6v1DrNmQb1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                        
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="p4-main-img" src="website-images/muscle-net/muscle-net-1.jpeg" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/muscle-net/muscle-net-1.jpeg" class="thumb active" onclick="switchPhoto('p4-main-img', this)">
+                                            <img src="website-images/muscle-net/muscle-net-2.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                            <img src="website-images/muscle-net/muscle-net-3.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                            <img src="website-images/muscle-net/muscle-net-4.jpeg" class="thumb" onclick="switchPhoto('p4-main-img', this)">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3>MuscleNET: Smart Predictive Analysis for Muscular Activity Using Wearable Sensors</h3>
+                                    <div class="award-badge">
+                                        <i class="fas fa-trophy"></i> Best Graduation Project Award (Kadir Has University, 2022)
+                                    </div>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Korkmaz, N.T. Ayhan, Ş. Soylu, A.S. Öğrenci
+                                    </p>
+                                    <span class="tag">Deep Learning / sEMG Signals / Real-Time Systems / Wearable Devices</span>
+                                    <p>This project addresses the risk of sport-related injuries caused by unsupervised weight training by bridging the gap between wearable hardware and advanced machine learning. I helped design a custom wearable device using MyoWare muscle sensors and an Arduino Nano to collect real-time Surface Electromyography (sEMG) signals, which are transmitted via Bluetooth to a dedicated mobile application. To analyze this data, I implemented a dual-stage AI pipeline: Deep Neural Networks (DNN) to classify training quality (determining if the weight is optimal, too light, or too heavy) and Long Short-Term Memory (LSTM) networks to forecast potential injuries based on fatigue patterns. The system achieved an 85% accuracy rate in classifying training quality using data augmentation techniques, effectively acting as a "digital spotter" to ensure safe and efficient workouts.</p>
+                                    <a href="https://ieeexplore.ieee.org/abstract/document/9925553" target="_blank" class="project-link">Read Paper &rarr;</a>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <button class="nav-btn next" onclick="moveSlide('research-carousel', 1)">&#10095;</button>
+    
+                        <div class="carousel-dots">
+                            <span class="dot featured active" onclick="currentSlide('research-carousel', 0)" data-title="Google Funded"></span>
+                            <span class="dot featured" onclick="currentSlide('research-carousel', 1)" data-title="Google Funded"></span>
+                            <span class="dot" onclick="currentSlide('research-carousel', 2)"></span>
+                            <span class="dot featured" onclick="currentSlide('research-carousel', 3)" data-title="Award Winner"></span>
+                        </div>
+                    </div>
+                </section>
+                <hr>
+                <section class="content-section" id="game-projects-desktop">
+                    <h2>Game Development</h2>
+                    
+                    <div class="carousel-container" id="games-carousel">
+                        
+                        <button class="nav-btn prev" onclick="moveSlide('games-carousel', -1)">&#10094;</button>
+    
+                        <div class="slides-wrapper">
+    
+                            <div class="project-slide active">
+                                <div class="slide-gallery">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" width="400" autoplay muted loop playsinline controls>
+                                            <source src="website-videos/garbage-vacuumer-video.mp4">
+                                        </video>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box achievement">
+                                            <i class="fas fa-download"></i>
+                                            <span>10k+ Downloads</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-code"></i>
+                                            <span>Role: Full Dev</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Servo Studios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content-game">
+                                    <h3>Garbage Vacuumer</h3>
+                                    <span class="tag">Hyper-Casual / Idle Arcade / Cleaning Simulation</span>
+                                    <p>Garbage Vacuumer is a successful hyper-casual title where players clean up clutter-filled cities. I designed and programmed the core mechanics and gameplay, collaborating with <strong>Moonee</strong> to refine the experience. The game features a satisfying loop where players collect debris, sell it for profit, and upgrade their vehicle from a basic vacuum car to heavy trucks and helicopters.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Vehicle Evolution:</strong> Progression from small vacuums to massive aerial cleaning drones.</li>
+                                        <li><strong>Upgrade System:</strong> Balanced economy allowing players to upgrade Storage, Area (range), and Power.</li>
+                                        <li><strong>Physics-Based Cleaning:</strong> Satisfying "sucking" mechanics for thousands of debris objects.</li>
+                                        <li><strong>Dynamic City Environment:</strong> Low-poly cityscapes that visually clear up as the player progresses.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" width="400" autoplay muted loop playsinline controls>
+                                            <source src="website-videos/shoot-and-cover-video.mp4">
+                                        </video>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box achievement">
+                                            <i class="fas fa-chart-line"></i>
+                                            <span>$0.31 CPI</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-code"></i>
+                                            <span>Role: Full Dev</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Servo Studios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content-game">
+                                    <h3>Shoot & Cover</h3>
+                                    <span class="tag">Third-Person Shooter / Tactical Action / Wave Defense</span>
+                                    <p>Shoot & Cover was my final project at <strong>Servo Studios</strong>, co-developed with Moonee. While the publisher provided assets, I handled the <strong>full technical implementation</strong>. The game achieved a highly competitive <strong>$0.31 CPI</strong> during testing, leading the studio to self-publish the title before I departed for my academic career.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Tactical Cover System:</strong> Dynamic movement logic allowing players to dash between safe zones.</li>
+                                        <li><strong>Weapon Shop Economy:</strong> In-game store to unlock and equip diverse firearms (AKM, Shotguns) using match earnings.</li>
+                                        <li><strong>Enemy AI Waves:</strong> Tactical combat against waves of armed enemies requiring strategic positioning.</li>
+                                        <li><strong>Extraction Loop:</strong> Clear the area and reach the extraction vehicle to secure level progress.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" width="370" autoplay muted loop playsinline controls>
+                                            <source src="website-videos/sky-surfer-video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-code"></i>
+                                            <span>Role: Full Dev</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Servo Studios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content-game">
+                                    <h3>Sky Surfer</h3>
+                                    <span class="tag">Hybrid Runner / Arcade Shooter / Aerial Combat</span>
+                                    <p>For my third project at <strong>Servo Studios</strong>, I reimagined the mechanics of the hit game <em>Subway Surfers</em> within an aerial combat setting. Sky Surfer combines classic lane-based dodging with arcade shooter gameplay, challenging players to navigate tight city corridors while blasting through waves of enemy planes.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Lane-Based Dogfighting:</strong> Seamlessly merged endless runner movement with auto-firing combat mechanics.</li>
+                                        <li><strong>Risk & Reward System:</strong> "Close Pass" mechanic rewarding players for flying through tight gaps in walls.</li>
+                                        <li><strong>Enemy Behaviors:</strong> Varied enemy types including formation drones and high-speed "Kamikaze" divers.</li>
+                                        <li><strong>Procedural City Generation:</strong> Infinite low-poly cityscapes with randomized obstacle patterns.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" width="370" autoplay muted loop playsinline controls>
+                                            <source src="website-videos/tower-climber-video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-code"></i>
+                                            <span>Role: Full Dev</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Servo Studios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content-game">
+                                    <h3>Tower Climber</h3>
+                                    <span class="tag">Hyper-Casual / Vertical Platformer / Reflex Arcade</span>
+                                    <p>For my second project at <strong>Servo Studios</strong>, I built upon the simplicity of my previous work but introduced a new reflex-based mechanic. Players must use precise timing to launch across and latch onto the opposite wall. The game features different styles of infinite towers and a fully customizable character, allowing players to mix and match various outfits and accessories.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Precision Hook Mechanic:</strong> One-tap timing gameplay to launch ropes and latch onto safe wall sections.</li>
+                                        <li><strong>Dynamic Obstacles:</strong> Navigating through moving saws, rotating blades, and electrical traps.</li>
+                                        <li><strong>Infinite Progression:</strong> Procedurally generated towers with evolving visual themes (Brick, Sci-Fi).</li>
+                                        <li><strong>Combo System:</strong> Speed-based multipliers (up to x6) rewarding fast and flawless climbs.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="video-view media-view">
+                                        <video class="main-media" width="370" autoplay muted loop playsinline controls>
+                                            <source src="website-videos/reach-the-space-video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-code"></i>
+                                            <span>Role: Full Dev</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Servo Studios</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slide-content-game">
+                                    <h3>Reach the Space</h3>
+                                    <span class="tag">Hyper-Casual / Vertical Endless Runner / Space Arcade</span>
+                                    <p>A vertical endless runner developed for <strong>Servo Studios</strong>. Reach the Space challenges players to pilot a customizable ship as high as possible, dodging aerial and extraterrestrial threats while collecting coins and power-ups to extend their flight.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Atmospheric Transition:</strong> Seamless visual progression from blue skies to deep space environments.</li>
+                                        <li><strong>Dynamic Obstacles:</strong> Evolving threats ranging from biplanes in the lower atmosphere to UFOs in space.</li>
+                                        <li><strong>Fuel System:</strong> Critical resource management requiring players to collect fuel tanks to maintain altitude.</li>
+                                        <li><strong>Power-Up System:</strong> Magnets and coin multipliers to boost high-score potential.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/LmWDfNjuaUQ" title="Castle Defender Gameplay" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+                        
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="g1-main-img" src="website-images/castle-defender/castle-defender-1.jpeg" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/castle-defender/castle-defender-1.jpeg" class="thumb active" onclick="switchPhoto('g1-main-img', this)">
+                                            <img src="website-images/castle-defender/castle-defender-2.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
+                                            <img src="website-images/castle-defender/castle-defender-3.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
+                                            <img src="website-images/castle-defender/castle-defender-4.jpeg" class="thumb" onclick="switchPhoto('g1-main-img', this)">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-graduation-cap"></i>
+                                            <span>Student Project</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Lead Developer</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-cubes"></i>
+                                            <span>3D Modeling</span>
+                                        </div>
                                     </div>
                                 </div>
                         
-                                <div class="media-toggle-group">
-                                    <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
-                                        <i class="fas fa-video"></i> Video
-                                    </button>
-                                    <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
-                                        <i class="fas fa-images"></i> Images
-                                    </button>
-                                </div>
-                                <div class="game-stats-grid">
-                                    <div class="stat-box info">
-                                        <i class="fas fa-briefcase"></i>
-                                        <span>Internship</span>
+                                <div class="slide-content-game">
+                                    <h3>Castle Defender</h3>
+                                    <span class="tag">First-Person Tower Defense / Low Poly / Action Strategy</span>
+                                    <p>Castle Defender is a unique blend of Tower Defense and FPS genres, developed as a student project to explore 3D modeling and design. Unlike traditional top-down games, it places the player directly on the battlefield. While I handled the core development and 3D modeling, I received support from <strong>Faruk Güç</strong> on especially weapon animations.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Active Combat:</strong> Defend the castle manually using Shotguns, Grenade Launchers, and a Giant Cannon.</li>
+                                        <li><strong>Economy Loop:</strong> Earn coins from defeated enemies to purchase essential ammo and upgrades.</li>
+                                        <li><strong>Immersive Perspective:</strong> A first-person take on the genre, putting you right in the middle of the enemy waves.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Blender</span>
                                     </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-microchip"></i>
-                                        <span>Generative AI</span>
-                                    </div>
-                                    <div class="stat-box info">
-                                        <i class="fas fa-calendar-alt"></i>
-                                        <span>Aug 2021</span>
+                                    <div style="margin-top: 15px;">
+                                        <a href="https://notsailor.itch.io/castle-defender" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
                                     </div>
                                 </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/UW2Ix0SxIMY?si=x9TMgSY8NIXPoXkH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                        
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="g2-main-img" src="website-images/the-arena/the-arena-1.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/the-arena/the-arena-1.png" class="thumb active" onclick="switchPhoto('g2-main-img', this)">
+                                            <img src="website-images/the-arena/the-arena-2.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                            <img src="website-images/the-arena/the-arena-3.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                            <img src="website-images/the-arena/the-arena-4.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                            <img src="website-images/the-arena/the-arena-5.png" class="thumb" onclick="switchPhoto('g2-main-img', this)">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-graduation-cap"></i>
+                                            <span>Student Project</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Lead Developer</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-paint-brush"></i>
+                                            <span>3D Art & Texturing</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="slide-content-game">
+                                    <h3>The Arena</h3>
+                                    <span class="tag">First-Person Melee / Fantasy / Custom Assets</span>
+                                    <p>The Arena is a first-person fighting game developed in collaboration with <strong>Faruk Güç</strong> as a semester project for the CE469 Game Programming course. It features immersive combat mechanics within a custom-built fantasy setting. This project was a career milestone, as the technical and artistic skills showcased here directly led to my first professional role as a game developer.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Dynamic Combat:</strong> Fight using distinct classes including Two-Handed Swords, Spears, and Sword & Shield.</li>
+                                        <li><strong>Environmental Tactics:</strong> Utilize activatable traps within the arena to gain a strategic advantage.</li>
+                                        <li><strong>Custom 3D Pipeline:</strong> Features an explorable village and a custom arena, where I modeled and textured the arena structure and traps from scratch.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Blender</span>
+                                        <span class="mini-tag">Substance Painter</span>
+                                    </div>
+                                    <div style="margin-top: 15px;">
+                                        <a href="https://notsailor.itch.io/the-arena" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    
+                                    <div class="video-view media-view">
+                                        <div class="youtube-link-card">
+                                            <a href="https://www.youtube.com/watch?v=YhS1USq2dec" target="_blank" class="video-link-wrapper">
+                                                <img src="https://img.youtube.com/vi/YhS1USq2dec/maxresdefault.jpg" alt="Playthrough by Vampirschi Gaming" class="main-media" style="object-fit: cover;">
+                                                <div class="play-overlay">
+                                                    <i class="fab fa-youtube"></i>
+                                                    <span>Watch Playthrough</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                        
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="g3-main-img" src="website-images/the-wizard/the-wizard-images-1.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/the-wizard/the-wizard-images-1.png" class="thumb active" onclick="switchPhoto('g3-main-img', this)">
+                                            <img src="website-images/the-wizard/the-wizard-images-2.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                            <img src="website-images/the-wizard/the-wizard-images-3.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                            <img src="website-images/the-wizard/the-wizard-images-4.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                            <img src="website-images/the-wizard/the-wizard-images-5.png" class="thumb" onclick="switchPhoto('g3-main-img', this)">
+                                        </div>
+                                    </div>
+                        
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-rocket"></i>
+                                            <span>First Project</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-user-friends"></i>
+                                            <span>Co-Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="slide-content-game">
+                                    <h3>The Wizard</h3>
+                                    <span class="tag">2.5D Action-Adventure / Elemental Combat / Indie Showcase</span>
+                                    <p>The Wizard marks the very beginning of my game development journey. Built in collaboration with <strong>Faruk Güç</strong> after only one month of learning Unity, this project utilizes 3D assets within a 2D gameplay loop (2.5D). Despite our limited experience at the time, we managed to create a cohesive experience that even caught the attention of content creators, featuring a playthrough by YouTuber <strong>Vampirschi Gaming</strong>.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Elemental Strategy:</strong> Combat requires careful thought—using fire attacks on fire enemies will heal them instead of dealing damage.</li>
+                                        <li><strong>Cinematic Elements:</strong> Features an introductory cutscene and a challenging mini-boss fight to drive the narrative.</li>
+                                        <li><strong>Indie Feature:</strong> The game was discovered and played by the indie gaming community on YouTube.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                    </div>
+                                    <div style="margin-top: 15px;">
+                                        <a href="https://notsailor.itch.io/the-wizard-1" target="_blank" class="project-link">Play on Itch.io &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="image-view media-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="nm-main-img" src="website-images/teknofest-1.jpeg" alt="Main view">
+                                        </div>
+                                        
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/teknofest-1.jpeg" class="thumb active" onclick="switchPhoto('nm-main-img', this)">
+                                            
+                                            <img src="website-images/nextmind-blogpost.jpeg" class="thumb" onclick="switchPhoto('nm-main-img', this)" alt="Teknofest Exhibition">
+                                            
+                                            <img src="website-images/nextmind-blogpost-2.jpeg" class="thumb" onclick="switchPhoto('nm-main-img', this)" alt="NextMind Feature">
+                                            <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-1.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
+                                            <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-2.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
+                                            <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-3.png" class="thumb" onclick="switchPhoto('nm-main-img', this)">
+                                        </div>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box achievement">
+                                            <i class="fas fa-award"></i>
+                                            <span>Teknofest</span>
+                                        </div>
+                                        <div class="stat-box achievement">
+                                            <i class="fas fa-star"></i>
+                                            <span>Official Post</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Internship</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-brain"></i>
+                                            <span>BCI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="slide-content-game">
+                                    <h3>Platformer Game for NextMind</h3>
+                                    <span class="tag">Puzzle Platformer / Hybrid Control / Brain-Computer Interface</span>
+                                    <p>This project is a hybrid-control puzzle platformer that combines traditional keyboard inputs with direct brain-computer interface (BCI) mechanics. I developed this game using Unity and the NextMind API, handling all programming and 3D modeling personally. The project was not only selected for exhibition at <strong>Teknofest 2021</strong> by the Digital Transformation Office of the Presidency of Turkey but was also <strong>featured in the official NextMind blog</strong> as a prime example of innovative BCI implementation.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Hybrid Controls:</strong> Players use the keyboard for movement while using the NextMind BCI device for environmental interaction.</li>
+                                        <li><strong>Neuro-Interaction:</strong> Obstacles such as rocks and barriers are overcome by mentally "focusing" on them to trigger actions via brain signals.</li>
+                                        <li><strong>Solo Development:</strong> I was responsible for the entire pipeline, including gameplay programming, BCI integration, and 3D asset creation.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">NextMind SDK</span>
+                                        <span class="mini-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    <div class="image-view media-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="ttt-main-img" src="website-images/nextmind-blogpost.jpeg" alt="Main view">
+                                        </div>
+                                        
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/nextmind-blogpost.jpeg" class="thumb active" onclick="switchPhoto('ttt-main-img', this)">
+                                            
+                                            <img src="website-images/tic-tac-toe/tic-tac-toe-1.png" class="thumb" onclick="switchPhoto('ttt-main-img', this)" alt="NextMind Feature">
+                                            
+                                            <img src="website-images/tic-tac-toe/tic-tac-toe-2.png" class="thumb" onclick="switchPhoto('ttt-main-img', this)">
+                                        </div>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box achievement">
+                                            <i class="fas fa-star"></i>
+                                            <span>Official Post</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Internship</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-brain"></i>
+                                            <span>BCI</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                                <div class="slide-content-game">
+                                    <h3>Tic Tac Toe With NextMind</h3>
+                                    <span class="tag">Experimental / Hands-Free / Brain-Computer Interface</span>
+                                    <p>Tic Tac Toe With NextMind is an experimental project developed to explore the potential of Brain-Computer Interfaces (BCI) in gaming. Built in just a few days, this project serves as a technical proof-of-concept for hands-free interaction. It demonstrates my ability to quickly adapt to new hardware SDKs and implement complex input systems into a functioning game loop—an effort that earned recognition and a <strong>feature in the official NextMind company blog</strong>.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>Visual Attention Control:</strong> Players place their marks on the grid entirely hands-free, simply by focusing their gaze and concentration on a specific square.</li>
+                                        <li><strong>Neuro-Feedback Loop:</strong> The game utilizes the NextMind device to translate real-time brain signals into game input.</li>
+                                        <li><strong>Solo Pipeline:</strong> I handled the entire development process, including programming the BCI integration and creating the 3D assets.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">NextMind SDK</span>
+                                        <span class="mini-tag">Blender</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+                                    
+                                    <div class="video-view media-view">
+                                        <video class="main-media" controls>
+                                            <source src="website-videos/game-modelled-by-ai.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                            
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="ai-main" src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" class="thumb active" onclick="switchPhoto('ai-main', this)">
+                                            <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-1.png" class="thumb" onclick="switchPhoto('ai-main', this)">
+                                            <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-3.png" class="thumb" onclick="switchPhoto('ai-main', this)">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                    <div class="game-stats-grid">
+                                        <div class="stat-box info">
+                                            <i class="fas fa-briefcase"></i>
+                                            <span>Internship</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-microchip"></i>
+                                            <span>Generative AI</span>
+                                        </div>
+                                        <div class="stat-box info">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            <span>Aug 2021</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="slide-content-game">
+                                    <h3>Game Modelled by AI</h3>
+                                    <span class="tag">Space Shooter / AI Pipeline / Experimental / NSVF</span>
+                                    <p><strong>Game Modelled by AI</strong> is an experimental R&D project developed during my internship to explore the potential of automating 3D asset creation. <strong>Created in August 2021</strong>—well before the current boom of generative 3D—this project served as a pioneering proof-of-concept for an AI-driven pipeline.</p>
+                                    <h4>Key Mechanics & Features:</h4>
+                                    <ul class="game-features-list">
+                                        <li><strong>AI-Generated Assets:</strong> Leveraged <strong>Neural Sparse Voxel Fields (NSVF)</strong> and <strong>Polygen</strong> to create 3D meshes (furniture, debris, characters) without manual modeling.</li>
+                                        <li><strong>Space Shooter Gameplay:</strong> A fully playable loop where players fly a ship and destroy waves of AI-generated obstacles.</li>
+                                        <li><strong>Automated Pipeline:</strong> Demonstrated how raw ML outputs could be imported, textured, and used in a real-time Unity environment.</li>
+                                    </ul>
+                                    <div class="tech-stack-row">
+                                        <strong>Tech Stack:</strong> 
+                                        <span class="mini-tag">Unity 3D</span>
+                                        <span class="mini-tag">C#</span>
+                                        <span class="mini-tag">Python (ML)</span>
+                                        <span class="mini-tag">NSVF & Polygen</span>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        <button class="nav-btn next" onclick="moveSlide('games-carousel', 1)">&#10095;</button>
+                        
+                        <div class="carousel-dots">
+            
+                            <span class="dot featured active" onclick="currentSlide('games-carousel', 0)" data-title="10k+ Downloads"></span>
+                            
+                            <span class="dot featured" onclick="currentSlide('games-carousel', 1)" data-title="$0.31 CPI"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 2)"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 3)"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 4)"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 5)"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 6)"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 7)"></span>
+                            
+                            <span class="dot featured" onclick="currentSlide('games-carousel', 8)" data-title="Teknofest Demo + NextMind Featured"></span>
+                            
+                            <span class="dot featured" onclick="currentSlide('games-carousel', 9)" data-title="NextMind Featured"></span>
+                            
+                            <span class="dot" onclick="currentSlide('games-carousel', 10)"></span>
+                    
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="mobile-view-container">
+        
+                <section class="content-section" id="academic-projects-mobile">
+                    <h2>Academic Research</h2>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <video class="main-media" autoplay muted controls>
+                                    <source src="website-videos/feedback-visual-video.mp4">
+                                </video>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="p1-main-img-mobile" src="website-images/feedback-visual/feedback-1.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/feedback-visual/feedback-1.png" class="thumb active" onclick="switchPhoto('p1-main-img-mobile', this)">
+                                    <img src="website-images/feedback-visual/feedback-2.png" class="thumb" onclick="switchPhoto('p1-main-img-mobile', this)">
+                                    <img src="website-images/feedback-visual/feedback-3.png" class="thumb" onclick="switchPhoto('p1-main-img-mobile', this)">
+                                    <img src="website-images/feedback-visual/feedback-4.png" class="thumb" onclick="switchPhoto('p1-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <h3>Before hands disappear: Effect of early warning visual feedback method for hand tracking failures in virtual reality</h3>
+                            <div class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</div>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz</p>
+                            <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
+                            <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
+                                    
+                            <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <video class="main-media" autoplay muted controls>
+                                    <source src="website-videos/feedback-gaze.mp4">
+                                </video>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="p2-main-img-mobile" src="website-images/feedback-gaze/feedback-gaze-1.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-1.png" class="thumb active" onclick="switchPhoto('p2-main-img-mobile', this)">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-2.png" class="thumb" onclick="switchPhoto('p2-main-img-mobile', this)">
+                                    <img src="website-images/feedback-gaze/feedback-gaze-3.png" class="thumb" onclick="switchPhoto('p2-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <h3>Gaze Analysis in Early Warning Visual Feedback System</h3>
+                            <div class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</div>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz</p>
+                            <span class="tag">VR / Eye Tracking / Attention</span>
+                            <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
+                                    
+                            <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/N1DnMK9Q-sE" frameborder="0" allowfullscreen></iframe>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="p3-main-img-mobile" src="website-images/sdf/sdf-1.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/sdf/sdf-1.png" class="thumb active" onclick="switchPhoto('p3-main-img-mobile', this)">
+                                    <img src="website-images/sdf/sdf-2.png" class="thumb" onclick="switchPhoto('p3-main-img-mobile', this)">
+                                    <img src="website-images/sdf/sdf-3.png" class="thumb" onclick="switchPhoto('p3-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <h3>Object Speed Control with a Signed Distance Field</h3>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz</p>
+                            <span class="tag">SDF / Mid-Air Manipulation</span>
+                            <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
+                                    
+                            <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/Ds8FF037uS4" frameborder="0" allowfullscreen></iframe>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="p4-main-img-mobile" src="website-images/muscle-net/muscle-net-1.jpeg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/muscle-net/muscle-net-1.jpeg" class="thumb active" onclick="switchPhoto('p4-main-img-mobile', this)">
+                                    <img src="website-images/muscle-net/muscle-net-2.jpeg" class="thumb" onclick="switchPhoto('p4-main-img-mobile', this)">
+                                    <img src="website-images/muscle-net/muscle-net-3.jpeg" class="thumb" onclick="switchPhoto('p4-main-img-mobile', this)">
+                                    <img src="website-images/muscle-net/muscle-net-4.jpeg" class="thumb" onclick="switchPhoto('p4-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <h3>MuscleNET: Smart Predictive Analysis for Muscular Activity</h3>
+                            <div class="award-badge"><i class="fas fa-trophy"></i> Best Graduation Project Award (Kadir Has University, 2022)</div>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Korkmaz, et al.</p>
+                            <span class="tag">Deep Learning / sEMG / Wearables</span>
+                            <p>This project addresses the risk of sport-related injuries caused by unsupervised weight training by bridging the gap between wearable hardware and advanced machine learning. I helped design a custom wearable device using MyoWare muscle sensors and an Arduino Nano to collect real-time Surface Electromyography (sEMG) signals, which are transmitted via Bluetooth to a dedicated mobile application. To analyze this data, I implemented a dual-stage AI pipeline: Deep Neural Networks (DNN) to classify training quality (determining if the weight is optimal, too light, or too heavy) and Long Short-Term Memory (LSTM) networks to forecast potential injuries based on fatigue patterns. The system achieved an 85% accuracy rate in classifying training quality using data augmentation techniques, effectively acting as a "digital spotter" to ensure safe and efficient workouts.</p>
+                                    
+                            <a href="https://ieeexplore.ieee.org/abstract/document/9925553" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section" id="game-projects-mobile">
+                    <h2>Game Development</h2>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper">
+                            <video class="main-media" width="100%" autoplay muted loop playsinline controls>
+                                <source src="website-videos/garbage-vacuumer-video.mp4">
+                            </video>
+                        </div>
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box achievement"><i class="fas fa-download"></i> 10k+ Downloads</div>
+                                <div class="stat-box info"><i class="fas fa-code"></i> Role: Full Dev</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Servo Studios</div>
                             </div>
                             
-                            <div class="slide-content-game">
-                                <h3>Game Modelled by AI</h3>
-                                <span class="tag">Space Shooter / AI Pipeline / Experimental / NSVF</span>
-                                <p><strong>Game Modelled by AI</strong> is an experimental R&D project developed during my internship to explore the potential of automating 3D asset creation. <strong>Created in August 2021</strong>—well before the current boom of generative 3D—this project served as a pioneering proof-of-concept for an AI-driven pipeline.</p>
-                                <h4>Key Mechanics & Features:</h4>
-                                <ul class="game-features-list">
-                                    <li><strong>AI-Generated Assets:</strong> Leveraged <strong>Neural Sparse Voxel Fields (NSVF)</strong> and <strong>Polygen</strong> to create 3D meshes (furniture, debris, characters) without manual modeling.</li>
-                                    <li><strong>Space Shooter Gameplay:</strong> A fully playable loop where players fly a ship and destroy waves of AI-generated obstacles.</li>
-                                    <li><strong>Automated Pipeline:</strong> Demonstrated how raw ML outputs could be imported, textured, and used in a real-time Unity environment.</li>
-                                </ul>
-                                <div class="tech-stack-row">
-                                    <strong>Tech Stack:</strong> 
-                                    <span class="mini-tag">Unity 3D</span>
-                                    <span class="mini-tag">C#</span>
-                                    <span class="mini-tag">Python (ML)</span>
-                                    <span class="mini-tag">NSVF & Polygen</span>
+                            <h3>Garbage Vacuumer</h3>
+                            <span class="tag">Hyper-Casual / Idle Arcade / Cleaning Simulation</span>
+                            <p>Garbage Vacuumer is a successful hyper-casual title where players clean up clutter-filled cities. I designed and programmed the core mechanics and gameplay, collaborating with <strong>Moonee</strong> to refine the experience. The game features a satisfying loop where players collect debris, sell it for profit, and upgrade their vehicle from a basic vacuum car to heavy trucks and helicopters.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Vehicle Evolution:</strong> Progression from small vacuums to massive aerial cleaning drones.</li>
+                                <li><strong>Upgrade System:</strong> Balanced economy allowing players to upgrade Storage, Area (range), and Power.</li>
+                                <li><strong>Physics-Based Cleaning:</strong> Satisfying "sucking" mechanics for thousands of debris objects.</li>
+                                <li><strong>Dynamic City Environment:</strong> Low-poly cityscapes that visually clear up as the player progresses.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper">
+                            <video class="main-media" width="100%" autoplay muted loop playsinline controls>
+                                <source src="website-videos/shoot-and-cover-video.mp4">
+                            </video>
+                        </div>
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box achievement"><i class="fas fa-chart-line"></i> $0.31 CPI</div>
+                                <div class="stat-box info"><i class="fas fa-code"></i> Role: Full Dev</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Servo Studios</div>
+                            </div>
+        
+                            <h3>Shoot & Cover</h3>
+                            <span class="tag">Third-Person Shooter / Tactical Action / Wave Defense</span>
+                            <p>Shoot & Cover was my final project at <strong>Servo Studios</strong>, co-developed with Moonee. While the publisher provided assets, I handled the <strong>full technical implementation</strong>. The game achieved a highly competitive <strong>$0.31 CPI</strong> during testing, leading the studio to self-publish the title before I departed for my academic career.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Tactical Cover System:</strong> Dynamic movement logic allowing players to dash between safe zones.</li>
+                                <li><strong>Weapon Shop Economy:</strong> In-game store to unlock and equip diverse firearms (AKM, Shotguns) using match earnings.</li>
+                                <li><strong>Enemy AI Waves:</strong> Tactical combat against waves of armed enemies requiring strategic positioning.</li>
+                                <li><strong>Extraction Loop:</strong> Clear the area and reach the extraction vehicle to secure level progress.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper">
+                            <video class="main-media" width="100%" autoplay muted loop playsinline controls>
+                                <source src="website-videos/sky-surfer-video.mp4">
+                            </video>
+                        </div>
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-code"></i> Role: Full Dev</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Servo Studios</div>
+                            </div>
+        
+                            <h3>Sky Surfer</h3>
+                            <span class="tag">Hybrid Runner / Arcade Shooter / Aerial Combat</span>
+                            <p>For my third project at <strong>Servo Studios</strong>, I reimagined the mechanics of the hit game <em>Subway Surfers</em> within an aerial combat setting. Sky Surfer combines classic lane-based dodging with arcade shooter gameplay, challenging players to navigate tight city corridors while blasting through waves of enemy planes.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Lane-Based Dogfighting:</strong> Seamlessly merged endless runner movement with auto-firing combat mechanics.</li>
+                                <li><strong>Risk & Reward System:</strong> "Close Pass" mechanic rewarding players for flying through tight gaps in walls.</li>
+                                <li><strong>Enemy Behaviors:</strong> Varied enemy types including formation drones and high-speed "Kamikaze" divers.</li>
+                                <li><strong>Procedural City Generation:</strong> Infinite low-poly cityscapes with randomized obstacle patterns.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper">
+                            <video class="main-media" width="100%" autoplay muted loop playsinline controls>
+                                <source src="website-videos/tower-climber-video.mp4">
+                            </video>
+                        </div>
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-code"></i> Role: Full Dev</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Servo Studios</div>
+                            </div>
+        
+                            <h3>Tower Climber</h3>
+                            <span class="tag">Hyper-Casual / Vertical Platformer / Reflex Arcade</span>
+                            <p>For my second project at <strong>Servo Studios</strong>, I built upon the simplicity of my previous work but introduced a new reflex-based mechanic. Players must use precise timing to launch across and latch onto the opposite wall. The game features different styles of infinite towers and a fully customizable character, allowing players to mix and match various outfits and accessories.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Precision Hook Mechanic:</strong> One-tap timing gameplay to launch ropes and latch onto safe wall sections.</li>
+                                <li><strong>Dynamic Obstacles:</strong> Navigating through moving saws, rotating blades, and electrical traps.</li>
+                                <li><strong>Infinite Progression:</strong> Procedurally generated towers with evolving visual themes (Brick, Sci-Fi).</li>
+                                <li><strong>Combo System:</strong> Speed-based multipliers (up to x6) rewarding fast and flawless climbs.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper">
+                            <video class="main-media" width="100%" autoplay muted loop playsinline controls>
+                                <source src="website-videos/reach-the-space-video.mp4">
+                            </video>
+                        </div>
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-code"></i> Role: Full Dev</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Servo Studios</div>
+                            </div>
+        
+                            <h3>Reach the Space</h3>
+                            <span class="tag">Hyper-Casual / Vertical Endless Runner / Space Arcade</span>
+                            <p>A vertical endless runner developed for <strong>Servo Studios</strong>. Reach the Space challenges players to pilot a customizable ship as high as possible, dodging aerial and extraterrestrial threats while collecting coins and power-ups to extend their flight.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Atmospheric Transition:</strong> Seamless visual progression from blue skies to deep space environments.</li>
+                                <li><strong>Dynamic Obstacles:</strong> Evolving threats ranging from biplanes in the lower atmosphere to UFOs in space.</li>
+                                <li><strong>Fuel System:</strong> Critical resource management requiring players to collect fuel tanks to maintain altitude.</li>
+                                <li><strong>Power-Up System:</strong> Magnets and coin multipliers to boost high-score potential.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/LmWDfNjuaUQ" frameborder="0" allowfullscreen></iframe>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="g1-main-img-mobile" src="website-images/castle-defender/castle-defender-1.jpeg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/castle-defender/castle-defender-1.jpeg" class="thumb active" onclick="switchPhoto('g1-main-img-mobile', this)">
+                                    <img src="website-images/castle-defender/castle-defender-2.jpeg" class="thumb" onclick="switchPhoto('g1-main-img-mobile', this)">
+                                    <img src="website-images/castle-defender/castle-defender-3.jpeg" class="thumb" onclick="switchPhoto('g1-main-img-mobile', this)">
+                                    <img src="website-images/castle-defender/castle-defender-4.jpeg" class="thumb" onclick="switchPhoto('g1-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-graduation-cap"></i> Student Project</div>
+                                <div class="stat-box info"><i class="fas fa-user-friends"></i> Lead Developer</div>
+                                <div class="stat-box info"><i class="fas fa-cubes"></i> 3D Modeling</div>
+                            </div>
+        
+                            <h3>Castle Defender</h3>
+                            <span class="tag">First-Person Tower Defense / Low Poly / Action Strategy</span>
+                            <p>Castle Defender is a unique blend of Tower Defense and FPS genres, developed as a student project to explore 3D modeling and design. Unlike traditional top-down games, it places the player directly on the battlefield. While I handled the core development and 3D modeling, I received support from <strong>Faruk Güç</strong> on especially weapon animations.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Active Combat:</strong> Defend the castle manually using Shotguns, Grenade Launchers, and a Giant Cannon.</li>
+                                <li><strong>Economy Loop:</strong> Earn coins from defeated enemies to purchase essential ammo and upgrades.</li>
+                                <li><strong>Immersive Perspective:</strong> A first-person take on the genre, putting you right in the middle of the enemy waves.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <a href="https://notsailor.itch.io/castle-defender" target="_blank" class="hero-btn games">Play on Itch.io &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <iframe class="main-media" width="100%" height="250" src="https://www.youtube.com/embed/UW2Ix0SxIMY" frameborder="0" allowfullscreen></iframe>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="g2-main-img-mobile" src="website-images/the-arena/the-arena-1.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/the-arena/the-arena-1.png" class="thumb active" onclick="switchPhoto('g2-main-img-mobile', this)">
+                                    <img src="website-images/the-arena/the-arena-2.png" class="thumb" onclick="switchPhoto('g2-main-img-mobile', this)">
+                                    <img src="website-images/the-arena/the-arena-3.png" class="thumb" onclick="switchPhoto('g2-main-img-mobile', this)">
+                                    <img src="website-images/the-arena/the-arena-4.png" class="thumb" onclick="switchPhoto('g2-main-img-mobile', this)">
+                                    <img src="website-images/the-arena/the-arena-5.png" class="thumb" onclick="switchPhoto('g2-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-graduation-cap"></i> Student Project</div>
+                                <div class="stat-box info"><i class="fas fa-user-friends"></i> Lead Developer</div>
+                                <div class="stat-box info"><i class="fas fa-paint-brush"></i> 3D Art & Texturing</div>
+                            </div>
+        
+                            <h3>The Arena</h3>
+                            <span class="tag">First-Person Melee / Fantasy / Custom Assets</span>
+                            <p>The Arena is a first-person fighting game developed in collaboration with <strong>Faruk Güç</strong> as a semester project for the CE469 Game Programming course. It features immersive combat mechanics within a custom-built fantasy setting. This project was a career milestone, as the technical and artistic skills showcased here directly led to my first professional role as a game developer.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Dynamic Combat:</strong> Fight using distinct classes including Two-Handed Swords, Spears, and Sword & Shield.</li>
+                                <li><strong>Environmental Tactics:</strong> Utilize activatable traps within the arena to gain a strategic advantage.</li>
+                                <li><strong>Custom 3D Pipeline:</strong> Features an explorable village and a custom arena, where I modeled and textured the arena structure and traps from scratch.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Blender</span>
+                                <span class="mini-tag">Substance Painter</span>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <a href="https://notsailor.itch.io/the-arena" target="_blank" class="hero-btn games">Play on Itch.io &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <div class="youtube-link-card">
+                                     <a href="https://www.youtube.com/watch?v=YhS1USq2dec" target="_blank" class="video-link-wrapper">
+                                         <img src="https://img.youtube.com/vi/YhS1USq2dec/maxresdefault.jpg" alt="Playthrough" class="main-media" style="object-fit: cover;">
+                                         <div class="play-overlay">
+                                             <i class="fab fa-youtube"></i> <span>Watch Playthrough</span>
+                                         </div>
+                                     </a>
+                                </div>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="g3-main-img-mobile" src="website-images/the-wizard/the-wizard-images-1.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/the-wizard/the-wizard-images-1.png" class="thumb active" onclick="switchPhoto('g3-main-img-mobile', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-2.png" class="thumb" onclick="switchPhoto('g3-main-img-mobile', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-3.png" class="thumb" onclick="switchPhoto('g3-main-img-mobile', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-4.png" class="thumb" onclick="switchPhoto('g3-main-img-mobile', this)">
+                                    <img src="website-images/the-wizard/the-wizard-images-5.png" class="thumb" onclick="switchPhoto('g3-main-img-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-rocket"></i> First Project</div>
+                                <div class="stat-box info"><i class="fas fa-user-friends"></i> Co-Developer</div>
+                            </div>
+        
+                            <h3>The Wizard</h3>
+                            <span class="tag">2.5D Action-Adventure / Elemental Combat / Indie Showcase</span>
+                            <p>The Wizard marks the very beginning of my game development journey. Built in collaboration with <strong>Faruk Güç</strong> after only one month of learning Unity, this project utilizes 3D assets within a 2D gameplay loop (2.5D). Despite our limited experience at the time, we managed to create a cohesive experience that even caught the attention of content creators, featuring a playthrough by YouTuber <strong>Vampirschi Gaming</strong>.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Elemental Strategy:</strong> Combat requires careful thought—using fire attacks on fire enemies will heal them instead of dealing damage.</li>
+                                <li><strong>Cinematic Elements:</strong> Features an introductory cutscene and a challenging mini-boss fight to drive the narrative.</li>
+                                <li><strong>Indie Feature:</strong> The game was discovered and played by the indie gaming community on YouTube.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                            </div>
+                            
+                            <div style="margin-top: 15px;">
+                                <a href="https://notsailor.itch.io/the-wizard-1" target="_blank" class="hero-btn games">Play on Itch.io &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            <div class="image-view media-view">
+                                <div class="photo-viewer-main">
+                                    <img id="nm-main-img-mobile" src="website-images/teknofest-1.jpeg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/teknofest-1.jpeg" class="thumb active" onclick="switchPhoto('nm-main-img-mobile', this)">
+                                    <img src="website-images/nextmind-blogpost.jpeg" class="thumb" onclick="switchPhoto('nm-main-img-mobile', this)">
+                                    <img src="website-images/nextmind-blogpost-2.jpeg" class="thumb" onclick="switchPhoto('nm-main-img-mobile', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-1.png" class="thumb" onclick="switchPhoto('nm-main-img-mobile', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-2.png" class="thumb" onclick="switchPhoto('nm-main-img-mobile', this)">
+                                    <img src="website-images/platformer-game-for-nextmind/platformer-game-for-nextmind-3.png" class="thumb" onclick="switchPhoto('nm-main-img-mobile', this)">
                                 </div>
                             </div>
                         </div>
-                    
-                    </div>
-                    <button class="nav-btn next" onclick="moveSlide('games-carousel', 1)">&#10095;</button>
-                    
-                    <div class="carousel-dots">
         
-                        <span class="dot featured active" onclick="currentSlide('games-carousel', 0)" data-title="10k+ Downloads"></span>
-                        
-                        <span class="dot featured" onclick="currentSlide('games-carousel', 1)" data-title="$0.31 CPI"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 2)"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 3)"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 4)"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 5)"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 6)"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 7)"></span>
-                        
-                        <span class="dot featured" onclick="currentSlide('games-carousel', 8)" data-title="Teknofest Demo + NextMind Featured"></span>
-                        
-                        <span class="dot featured" onclick="currentSlide('games-carousel', 9)" data-title="NextMind Featured"></span>
-                        
-                        <span class="dot" onclick="currentSlide('games-carousel', 10)"></span>
-                
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box achievement"><i class="fas fa-award"></i> Teknofest</div>
+                                <div class="stat-box achievement"><i class="fas fa-star"></i> Official Post</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Internship</div>
+                                <div class="stat-box info"><i class="fas fa-brain"></i> BCI</div>
+                            </div>
+        
+                            <h3>Platformer Game for NextMind</h3>
+                            <span class="tag">Puzzle Platformer / Hybrid Control / Brain-Computer Interface</span>
+                            <p>This project is a hybrid-control puzzle platformer that combines traditional keyboard inputs with direct brain-computer interface (BCI) mechanics. I developed this game using Unity and the NextMind API, handling all programming and 3D modeling personally. The project was not only selected for exhibition at <strong>Teknofest 2021</strong> by the Digital Transformation Office of the Presidency of Turkey but was also <strong>featured in the official NextMind blog</strong> as a prime example of innovative BCI implementation.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Hybrid Controls:</strong> Players use the keyboard for movement while using the NextMind BCI device for environmental interaction.</li>
+                                <li><strong>Neuro-Interaction:</strong> Obstacles such as rocks and barriers are overcome by mentally "focusing" on them to trigger actions via brain signals.</li>
+                                <li><strong>Solo Development:</strong> I was responsible for the entire pipeline, including gameplay programming, BCI integration, and 3D asset creation.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">NextMind SDK</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            <div class="image-view media-view">
+                                <div class="photo-viewer-main">
+                                    <img id="ttt-main-img-mobile" src="website-images/nextmind-blogpost.jpeg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/nextmind-blogpost.jpeg" class="thumb active" onclick="switchPhoto('ttt-main-img-mobile', this)">
+                                    <img src="website-images/tic-tac-toe/tic-tac-toe-1.png" class="thumb" onclick="switchPhoto('ttt-main-img-mobile', this)">
+                                    <img src="website-images/tic-tac-toe/tic-tac-toe-2.png" class="thumb" onclick="switchPhoto('ttt-main-img-mobile', this)">
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box achievement"><i class="fas fa-star"></i> Official Post</div>
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Internship</div>
+                                <div class="stat-box info"><i class="fas fa-brain"></i> BCI</div>
+                            </div>
+        
+                            <h3>Tic Tac Toe With NextMind</h3>
+                            <span class="tag">Experimental / Hands-Free / Brain-Computer Interface</span>
+                            <p>Tic Tac Toe With NextMind is an experimental project developed to explore the potential of Brain-Computer Interfaces (BCI) in gaming. Built in just a few days, this project serves as a technical proof-of-concept for hands-free interaction. It demonstrates my ability to quickly adapt to new hardware SDKs and implement complex input systems into a functioning game loop—an effort that earned recognition and a <strong>feature in the official NextMind company blog</strong>.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>Visual Attention Control:</strong> Players place their marks on the grid entirely hands-free, simply by focusing their gaze and concentration on a specific square.</li>
+                                <li><strong>Neuro-Feedback Loop:</strong> The game utilizes the NextMind device to translate real-time brain signals into game input.</li>
+                                <li><strong>Solo Pipeline:</strong> I handled the entire development process, including programming the BCI integration and creating the 3D assets.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">NextMind SDK</span>
+                                <span class="mini-tag">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+                            
+                            <div class="video-view media-view">
+                                <video class="main-media" controls>
+                                    <source src="website-videos/game-modelled-by-ai.mp4" type="video/mp4">
+                                </video>
+                            </div>
+        
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="ai-main-mobile" src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-2.png" class="thumb active" onclick="switchPhoto('ai-main-mobile', this)">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-1.png" class="thumb" onclick="switchPhoto('ai-main-mobile', this)">
+                                    <img src="website-images/game-modelled-by-ai/game-modelled-by-ai-3.png" class="thumb" onclick="switchPhoto('ai-main-mobile', this)">
+                                </div>
+                            </div>
+        
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+        
+                        <div class="mobile-card-content">
+                            <div class="game-stats-grid">
+                                <div class="stat-box info"><i class="fas fa-briefcase"></i> Internship</div>
+                                <div class="stat-box info"><i class="fas fa-microchip"></i> Generative AI</div>
+                                <div class="stat-box info"><i class="fas fa-calendar-alt"></i> Aug 2021</div>
+                            </div>
+        
+                            <h3>Game Modelled by AI</h3>
+                            <span class="tag">Space Shooter / AI Pipeline / Experimental / NSVF</span>
+                            <p><strong>Game Modelled by AI</strong> is an experimental R&D project developed during my internship to explore the potential of automating 3D asset creation. <strong>Created in August 2021</strong>—well before the current boom of generative 3D—this project served as a pioneering proof-of-concept for an AI-driven pipeline.</p>
+                            
+                            <h4>Key Mechanics & Features:</h4>
+                            <ul class="game-features-list">
+                                <li><strong>AI-Generated Assets:</strong> Leveraged <strong>Neural Sparse Voxel Fields (NSVF)</strong> and <strong>Polygen</strong> to create 3D meshes (furniture, debris, characters) without manual modeling.</li>
+                                <li><strong>Space Shooter Gameplay:</strong> A fully playable loop where players fly a ship and destroy waves of AI-generated obstacles.</li>
+                                <li><strong>Automated Pipeline:</strong> Demonstrated how raw ML outputs could be imported, textured, and used in a real-time Unity environment.</li>
+                            </ul>
+                            
+                            <div class="tech-stack-row">
+                                <strong>Tech Stack:</strong> 
+                                <span class="mini-tag">Unity 3D</span>
+                                <span class="mini-tag">C#</span>
+                                <span class="mini-tag">Python (ML)</span>
+                                <span class="mini-tag">NSVF & Polygen</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                </section>
+            </div>
+
+
+            
 
         </main>
 

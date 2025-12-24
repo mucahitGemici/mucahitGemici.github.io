@@ -174,3 +174,35 @@ function toggleUpdates() {
         }
     }
 }
+/* =========================================
+   SMOOTH SCROLL HANDLER (Desktop vs Mobile)
+   ========================================= */
+   function scrollToSection(sectionName) {
+    // 1. Check if the mobile view is currently visible
+    const mobileContainer = document.querySelector('.mobile-view-container');
+    
+    // We check the "display" style to see if it's block (visible) or none (hidden)
+    // Note: getComputedStyle is needed because the style is set in CSS, not inline HTML
+    const isMobile = window.getComputedStyle(mobileContainer).display !== 'none';
+
+    // 2. Determine the correct ID to target
+    let targetId = '';
+    if (isMobile) {
+        targetId = sectionName + '-mobile';
+    } else {
+        targetId = sectionName + '-desktop';
+    }
+
+    // 3. Find the element and scroll to it
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+        // Use a small offset for the sticky navbar (approx 80px)
+        const yOffset = -100; 
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({top: y, behavior: 'smooth'});
+    } else {
+        console.error("Could not find section:", targetId);
+    }
+}
