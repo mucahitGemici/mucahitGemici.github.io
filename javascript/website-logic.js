@@ -42,6 +42,52 @@ function initTheme() {
 
 document.addEventListener('DOMContentLoaded', initTheme);
 
+/* =========================================
+   0b. PROFILE PHOTO LIGHTBOX
+   Only index.html has the photo and the overlay, but this file is shared by
+   every page, so bail out quietly when either element is missing.
+   ========================================= */
+function initPhotoLightbox() {
+    const trigger = document.getElementById('profile-photo');
+    const box = document.getElementById('photo-lightbox');
+    if (!trigger || !box) return;
+
+    const closeBtn = box.querySelector('.photo-lightbox-close');
+
+    function openLightbox() {
+        box.hidden = false;
+        document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeLightbox() {
+        box.hidden = true;
+        document.body.style.overflow = '';
+        trigger.focus();
+    }
+
+    trigger.addEventListener('click', openLightbox);
+
+    // The trigger is an <img role="button">, so Enter/Space have to be wired up
+    // by hand. preventDefault stops Space from scrolling the page.
+    trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox();
+        }
+    });
+
+    // Any click inside the overlay closes it, including the close button and
+    // the image itself, which matches the zoom-out cursor.
+    box.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !box.hidden) closeLightbox();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initPhotoLightbox);
+
 // 1. MINI PHOTO GALLERY SWITCHER
 function switchPhoto(mainImgId, clickedThumb) {
     // Update main image

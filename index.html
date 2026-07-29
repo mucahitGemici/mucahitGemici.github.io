@@ -26,9 +26,9 @@
             })();
         </script>
 
-        <link rel="stylesheet" href="css/new_style_2.css?v=3">
+        <link rel="stylesheet" href="css/new_style_2.css?v=8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <script src="javascript/website-logic.js?v=3"></script>
+        <script src="javascript/website-logic.js?v=8"></script>
         <link rel="icon" type="image/png" href="website-images/Icon.png?v=2">
         <link rel="apple-touch-icon" href="website-images/Icon.png?v=2">
     </head>
@@ -59,7 +59,7 @@
                 <div class="hero-layout">
                     
                     <div class="hero-col hero-profile">
-                        <img src="website-images/me.jpeg" width="180px" alt="Mucahit Gemici" class="profile-photo"> 
+                        <img src="website-images/me.jpeg" width="180" alt="Mucahit Gemici" class="profile-photo" id="profile-photo" role="button" tabindex="0" aria-label="View a larger version of this photo">
                         <h1>Mucahit Gemici</h1>
                         <p class="subtitle">Ph.D. Candidate in Computer Science @ Concordia University</p>
                         
@@ -154,16 +154,19 @@
             <section class="content-section">
                 <h2>About Me</h2>
                 <p>
-                    I am a Ph.D. Candidate in Computer Science at Concordia University, where I began in January 2024, working in <strong>Human-Computer Interaction</strong> and <strong>Extended Reality</strong> under the supervision of Dr. Anil Ufuk Batmaz.
+                    I studied <strong>Electrical &amp; Electronics Engineering</strong> at Kadir Has University, graduating in 2022 as the top-ranking student across all departments and faculties with a <strong>3.94/4.00 GPA</strong>. My graduation project was <em>MuscleNET</em>, a wearable device built with Arduino and MyoWare sensors that reads muscle activity and predicts training quality, which received the Best Graduation Project Award. During an internship around the same time, I built a set of brain-computer interface games on the NextMind SDK, one of which was exhibited at Teknofest 2021 and featured on NextMind's official blog.
                 </p>
                 <p>
-                    My thesis looks at <strong>cross-reality systems for productivity workflows</strong>. Immersive displays are good at things desktops are bad at, and the reverse is also true, so rather than treating one as a replacement for the other, I am interested in workflows that use both, and in what it actually costs people to move between them. Most of my recent work has been building and evaluating such systems for 3D modeling and for AI-assisted authoring.
+                    After graduating I joined <strong>Servo Studios</strong> as a mobile game developer, where I spent a year shipping five titles and handling everything from core mechanics and UI to performance on low-end phones. It taught me interactive software development tools and a user-friendly approach to design, both of which carried directly into my research.
                 </p>
                 <p>
-                    Spatial input is what makes the immersive side worth using, and it is also its weakest part: imprecise at a distance, and not always reliable. Both limits shape what can be built on top of them, so both belong in the thesis. For precision, I built a manipulation method that uses a signed distance field to slow an object as it nears other surfaces and let it move freely in open space, cutting error rates in complex tasks without making users any slower. For reliability, in a <strong>Google-funded</strong> project, I developed a system that predicts hand-tracking failures and warns users before they occur, then used eye tracking to confirm the warnings help without drawing attention away from the task.
+                    I started my <strong>Ph.D. in Computer Science at Concordia University</strong> in January 2024, under the supervision of Dr. Anil Ufuk Batmaz, working in Human-Computer Interaction and Extended Reality. My early work there dealt with two obstacles that make spatial input hard to rely on. The first is precision: I built a manipulation method that uses a signed distance field to slow a distant object as it nears other surfaces, so it can be placed accurately without slowing the user down. The second is reliability, in a <strong>Google-funded</strong> project on hand tracking, where I developed an early-warning system that predicts tracking failures and alerts users before they happen, then used eye tracking to check that the warnings do not pull attention away from the task.
                 </p>
                 <p>
-                    Prior to my Ph.D., I graduated as the <strong>top-ranking student (3.94/4.00 GPA)</strong> with a B.Sc. in Electrical & Electronics Engineering from Kadir Has University (2022). Before returning to academia, I worked as a <strong>Game Developer</strong> in the mobile gaming industry. This experience provided me with extensive technical expertise in <strong>Unity</strong>, which now serves as the core tool for my XR research. I also currently serve as a Teaching Assistant for Game Development courses at Concordia.
+                    Most of my recent work is on <strong>cross-reality systems for productivity workflows</strong>: how people work across desktop and immersive environments, and what it costs them to move between the two. In <em>MAR</em> I paired desktop 3D modeling in Blender with an immersive AR view for spatial inspection and gesture-based selection. In a following study I built an <em>AR second screen</em> for LLM-assisted authoring and measured what users actually pay to cross between the physical and virtual sides of that workflow. Every system I build for these studies is interactive software, so the game development still does most of the heavy lifting, and I teach some of it back as a teaching assistant for the game development courses at Concordia.
+                </p>
+                <p>
+                    I am currently a <strong>visiting researcher at the Nara Institute of Science and Technology (NAIST)</strong> in Japan, in the Cybernetics and Reality Engineering Laboratory of Prof. Kiyoshi Kiyokawa, supported by a <strong>Mitacs Global Research Internship Award</strong>, where I am developing a smart glasses assistance system for daily use.
                 </p>
                 <p>
                     <em>Outside of the lab, I am a disciplined bodybuilder. The consistency and dedication required for the sport directly translate to my work ethic in facing long-term research challenges.</em>
@@ -182,5 +185,10 @@
                 <p>&copy; 2026 Mucahit Gemici. Hosted on GitHub Pages.</p>
             </div>
         </footer>
+
+        <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Profile photo" hidden>
+            <button class="photo-lightbox-close" type="button" aria-label="Close">&times;</button>
+            <img src="website-images/me.jpeg" alt="Mucahit Gemici">
+        </div>
     </body>
 </html>

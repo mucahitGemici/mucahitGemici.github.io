@@ -1365,8 +1365,20 @@ hr.cv-divider {
 [data-theme="dark"] .dot:not(.active):not(.featured) { background-color: #4C566A; }
 
 /* Buttons that sit on light surfaces in the light theme */
-[data-theme="dark"] .hero-btn.github { background-color: #4C566A; border-color: #4C566A; }
-[data-theme="dark"] .hero-btn.github:hover { background-color: #5E6A82; border-color: #5E6A82; }
+/* GitHub has no brand colour that reads as "active" on a dark card: its near-black
+   sinks into the background, and the muted slate used previously sat at 1.5:1
+   against the hero card, which looked disabled next to LinkedIn and Scholar.
+   Invert it instead, which is on-brand for GitHub and gives 9:1 separation. */
+[data-theme="dark"] .hero-btn.github {
+    background-color: #E5E9F0;
+    border-color: #E5E9F0;
+    color: #2E3440;
+}
+[data-theme="dark"] .hero-btn.github:hover {
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+    color: #2E3440;
+}
 [data-theme="dark"] .hero-btn.games { background-color: #4C566A; border-color: #4C566A; }
 [data-theme="dark"] .hero-btn.games:hover { background-color: #5E6A82; border-color: #5E6A82; }
 [data-theme="dark"] .hero-btn.academic { color: #2E3440; }
@@ -1384,4 +1396,134 @@ hr.cv-divider {
     color: #F5DCA6;
     border-color: #EBCB8B;
     background-color: rgba(235, 203, 139, 0.14);
+}
+
+/* =========================================
+   15. PROFILE PHOTO LIGHTBOX
+   The hero photo is a 1052x1057 source rendered at 110px, so clicking it opens
+   the full image. The overlay reuses the same src, which is already in cache.
+   ========================================= */
+.profile-photo {
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.profile-photo:hover {
+    transform: scale(1.04);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+.profile-photo:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.photo-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000; /* must beat the sticky nav, which sits at 1000 */
+    background: rgba(46, 52, 64, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+    animation: fadeIn 0.2s ease;
+}
+
+/* REQUIRED: the author `display: flex` above outranks the UA stylesheet's
+   `[hidden] { display: none }`, so without this rule the overlay would never hide. */
+.photo-lightbox[hidden] { display: none; }
+
+.photo-lightbox img {
+    max-width: min(90vw, 620px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.photo-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.photo-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: #fff;
+}
+.photo-lightbox-close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .photo-lightbox { padding: 14px; }
+    .photo-lightbox-close { top: 10px; right: 12px; }
+}
+
+/* =========================================
+   16. BADGE CONTRAST
+   These badges all used white text on light fills. Measured against WCAG they
+   ranged from 1.6:1 to 4.1:1, so the bold label was washing out, most visibly
+   in dark mode where the surrounding surface is dark. Dark text on the same
+   fills keeps the colour coding and lifts every one of them above 4.5:1.
+   Applies to both themes: the fills are identical in light and dark.
+   ========================================= */
+.award-badge {
+    color: #2E3440 !important;          /* was #fff on #f1c40f -> 1.66:1, now 7.52:1 */
+    text-shadow: none;
+}
+.google-badge {
+    color: #FFFFFF !important;          /* keeps white, but on a darker blue */
+    background-color: #1A56C4 !important; /* was #4285F4 -> 3.56:1, now 7.0:1 */
+}
+.status-badge.incoming {
+    color: #2E3440;                     /* was #fff on #ebcb8b -> 1.56:1 */
+    text-shadow: none;
+}
+.pub-id.journal { background-color: #A54A52; }   /* white text: 4.09 -> 5.5:1 */
+.pub-id.conference { background-color: #4C6E96; } /* white text: 4.03 -> 5.4:1 */
+.pub-id.workshop {
+    background-color: #a3be8c;
+    color: #2E3440;                     /* was white -> 2.04:1, now 6.13:1 */
+}
+
+/* =========================================
+   17. BOLD TEXT EMPHASIS
+   Body copy uses --text-light; bold steps up to --text-main. On dark surfaces a
+   light glyph blooms, which flattens the perceived weight difference, so bold
+   needs a luminance step rather than just a heavier face.
+   Deliberately NOT var(--accent): links are accent-coloured, so accent bold text
+   would read as clickable. --text-main is already the heading colour, so bold and
+   headings share one "primary text" level and no new meaning is introduced.
+   ========================================= */
+strong, b {
+    color: var(--text-main);
+}
+
+/* Dark mode only: bold text goes pure white.
+   Emphasis on a dark surface has to come from luminance, not hue. Any saturated
+   colour that is readable here lands at roughly the same brightness as the body
+   copy (Nord gold measured 1.00x against it, purple 1.32x), so it reads as a
+   colour change rather than as emphasis. White gives a 1.55x step above body
+   text at 12.49:1, and carries no hue to compete with the accent-blue links.
+   Light mode keeps the neutral --text-main step from the rule above. */
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+    color: #FFFFFF;
 }
