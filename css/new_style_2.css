@@ -188,7 +188,14 @@ h1 {
 
 /* Scrollable Updates List */
 .hero-updates-list {
-    max-height: 200px;
+    /* Fill the column instead of stopping at a fixed height, so no dead space is
+       left under the scroll area. flex-basis MUST be 0, not auto: with auto the
+       list's full content height counts toward the column's intrinsic height,
+       which makes this the tallest column and stretches the other two.
+       The explicit min-height overrides the default min-height:auto, which is
+       what lets the list shrink below its content size and scroll internally. */
+    flex: 1 1 0;
+    min-height: 180px;
     overflow-y: auto;
     padding-right: 5px;
     display: flex;
@@ -605,6 +612,9 @@ hr { border: 0; height: 1px; background: var(--border); margin: 2rem 0; }
 @media (max-width: 1000px) {
     .hero-split .hero-layout { flex-direction: column; align-items: center; }
     .hero-col { width: 100%; max-width: 600px; margin-bottom: 20px; height: auto; }
+    /* Columns are auto-height once stacked, so the list would grow to its full
+       content length. Cap it again and keep the internal scroll. */
+    .hero-updates-list { flex: 0 1 auto; max-height: 220px; }
 }
 
 @media (max-width: 850px) {
@@ -1363,3 +1373,15 @@ hr.cv-divider {
 
 /* Accent-on-dark needs dark text for contrast */
 [data-theme="dark"] .nav-btn:hover { color: #2E3440; }
+
+/* In dark mode the toggle shows a sun (the theme you would switch TO), so it is
+   tinted yellow. The moon shown in light mode keeps the default nav colour. */
+[data-theme="dark"] .theme-toggle {
+    color: #EBCB8B;
+    border-color: rgba(235, 203, 139, 0.45);
+}
+[data-theme="dark"] .theme-toggle:hover {
+    color: #F5DCA6;
+    border-color: #EBCB8B;
+    background-color: rgba(235, 203, 139, 0.14);
+}
