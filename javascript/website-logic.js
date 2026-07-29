@@ -1,3 +1,47 @@
+/* =========================================
+   0. THEME (LIGHT / DARK)
+   The initial theme is applied by a small inline script in each page's
+   <head> so there is no flash of the wrong theme before this file runs.
+   ========================================= */
+function applyThemeIcon(theme) {
+    const icon = document.querySelector('#theme-toggle i');
+    if (!icon) return;
+    // Show the theme you would switch TO.
+    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+function initTheme() {
+    const btn = document.getElementById('theme-toggle');
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    applyThemeIcon(current);
+
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        const now = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', now);
+        applyThemeIcon(now);
+        try {
+            localStorage.setItem('theme', now);
+        } catch (e) { /* localStorage unavailable */ }
+    });
+
+    // Follow the OS setting only while the visitor has not chosen explicitly.
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        let stored = null;
+        try {
+            stored = localStorage.getItem('theme');
+        } catch (err) { /* localStorage unavailable */ }
+        if (stored) return;
+
+        const next = e.matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        applyThemeIcon(next);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initTheme);
+
 // 1. MINI PHOTO GALLERY SWITCHER
 function switchPhoto(mainImgId, clickedThumb) {
     // Update main image

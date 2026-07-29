@@ -4,12 +4,33 @@
         <meta charset="UTF-8">
         <meta name="author" content="Mucahit Gemici">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mucahit Gemici - PhD Candidate</title>
+        <title>Mucahit Gemici - PhD Candidate in HCI &amp; Extended Reality</title>
+        <meta name="description" content="Mucahit Gemici is a Ph.D. Candidate in Computer Science at Concordia University researching cross-reality systems that span desktop and immersive workspaces, alongside Human-Computer Interaction, Virtual and Augmented Reality, and 3D interaction.">
+        <link rel="canonical" href="https://mucahitgemici.github.io/">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Mucahit Gemici">
+        <meta property="og:title" content="Mucahit Gemici - PhD Candidate in HCI &amp; Extended Reality">
+        <meta property="og:description" content="Ph.D. Candidate at Concordia University researching cross-reality systems that span desktop and immersive workspaces, with work in HCI, Virtual and Augmented Reality, and 3D interaction.">
+        <meta property="og:url" content="https://mucahitgemici.github.io/">
+        <meta property="og:image" content="https://mucahitgemici.github.io/website-images/me.jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) { /* localStorage unavailable */ }
+            })();
+        </script>
+
         <link rel="stylesheet" href="css/new_style_2.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="javascript/website-logic.js"></script>
         <link rel="icon" type="image/png" href="website-images/Icon.png?v=2">
-        <link rel="apple-touch-icon" href="website-images/Icon.png?v=2">  
+        <link rel="apple-touch-icon" href="website-images/Icon.png?v=2">
     </head>
 
     <body>
@@ -19,12 +40,17 @@
                     <img src="website-images/Icon.png" alt="Logo">
                     Gemici
                 </a>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -45,6 +71,10 @@
                             <a href="https://scholar.google.ca/citations?user=3S_-2ZkAAAAJ&hl=en" target="_blank" class="hero-btn scholar">
                                 <i class="fas fa-graduation-cap"></i> Google Scholar
                             </a>
+
+                            <a href="https://github.com/mucahitGemici" target="_blank" class="hero-btn github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                         
                         <p class="subtitle email-text"><i class="fas fa-envelope"></i> mucahit.gemici.98@gmail.com</p>
@@ -53,12 +83,13 @@
                     <div class="hero-col hero-interests">
                         <h3>Research Interests</h3>
                         <ul class="hero-interest-list">
+                            <li><i class="fas fa-globe"></i> Cross-Reality Systems</li>
                             <li><i class="fas fa-hand-paper"></i> Human-Computer Interaction</li>
                             <li><i class="fas fa-vr-cardboard"></i> Virtual Reality</li>
                             <li><i class="fas fa-glasses"></i> Augmented Reality</li>
-                            <li><i class="fas fa-globe"></i> Cross Reality</li>
-                            <li><i class="fas fa-project-diagram"></i> Hybrid Interfaces</li>
-                            <li><i class="fas fa-robot"></i> AI Assistive Systems</li>
+                            <li><i class="fas fa-cubes"></i> 3D &amp; Mid-Air Interaction</li>
+                            <li><i class="fas fa-project-diagram"></i> Hybrid User Interfaces</li>
+                            <li><i class="fas fa-robot"></i> AI-Assisted Interaction</li>
                             <li><i class="fas fa-gamepad"></i> Game Technologies</li>
                         </ul>
                     </div>
@@ -66,7 +97,17 @@
                     <div class="hero-col hero-updates">
                         <h3>Latest Updates</h3>
                         <div class="hero-updates-list">
-                            
+
+                            <div class="update-item compact">
+                                <span class="date">Jul 2026</span>
+                                <p>Paper accepted to <em>IEEE TVCG</em> (ISMAR 2026 Special Issue): <em>"Modeling Across Realities (MAR)..."</em></p>
+                            </div>
+
+                            <div class="update-item compact">
+                                <span class="date">Jul 2026</span>
+                                <p>Paper accepted at <em>ACM SUI 2026</em>: <em>"Crossing Realities Has a Cost..."</em></p>
+                            </div>
+
                             <div class="update-item compact">
                                 <span class="date">Nov 2025</span>
                                 <p>Successfully presented my Ph.D. proposal.</p>
@@ -113,13 +154,16 @@
             <section class="content-section">
                 <h2>About Me</h2>
                 <p>
-                    I am a Ph.D. Candidate in Computer Science at Concordia University, where I began my research journey in January 2024. My work lies at the intersection of <strong>Human-Computer Interaction (HCI)</strong> and <strong>Extended Reality (XR)</strong>.
+                    I am a Ph.D. Candidate in Computer Science at Concordia University, where I began in January 2024, working in <strong>Human-Computer Interaction</strong> and <strong>Extended Reality</strong> under the supervision of Dr. Anil Ufuk Batmaz.
                 </p>
                 <p>
-                    My research experience covers a diverse range of topics, from enhancing user precision in mid-air manipulations to developing predictive early-warning systems for hand-tracking failures—a project <strong>funded by Google</strong>. Currently, my doctoral thesis focuses on integrating <strong>Large Language Models (LLMs)</strong> and <strong>Hybrid Interfaces</strong> into XR environments to support complex productivity workflows and creative design.
+                    My thesis looks at <strong>cross-reality systems for productivity workflows</strong>. Immersive displays are good at things desktops are bad at, and the reverse is also true, so rather than treating one as a replacement for the other, I am interested in workflows that use both, and in what it actually costs people to move between them. Most of my recent work has been building and evaluating such systems for 3D modeling and for AI-assisted authoring.
                 </p>
                 <p>
-                    Prior to my Ph.D., I graduated as the <strong>top-ranking student (3.94/4.00 GPA)</strong> with a B.Sc. in Electrical & Electronics Engineering from Kadir Has University (2022). Before returning to academia, I worked as a <strong>Game Developer</strong> in the mobile gaming industry. This experience provided me with extensive technical expertise in <strong>Unity</strong>, which now serves as the core tool for my VR research. I also currently serve as a Teaching Assistant for Game Development courses at Concordia.
+                    Spatial input is what makes the immersive side worth using, and it is also its weakest part: imprecise at a distance, and not always reliable. Both limits shape what can be built on top of them, so both belong in the thesis. For precision, I built a manipulation method that uses a signed distance field to slow an object as it nears other surfaces and let it move freely in open space, cutting error rates in complex tasks without making users any slower. For reliability, in a <strong>Google-funded</strong> project, I developed a system that predicts hand-tracking failures and warns users before they occur, then used eye tracking to confirm the warnings help without drawing attention away from the task.
+                </p>
+                <p>
+                    Prior to my Ph.D., I graduated as the <strong>top-ranking student (3.94/4.00 GPA)</strong> with a B.Sc. in Electrical & Electronics Engineering from Kadir Has University (2022). Before returning to academia, I worked as a <strong>Game Developer</strong> in the mobile gaming industry. This experience provided me with extensive technical expertise in <strong>Unity</strong>, which now serves as the core tool for my XR research. I also currently serve as a Teaching Assistant for Game Development courses at Concordia.
                 </p>
                 <p>
                     <em>Outside of the lab, I am a disciplined bodybuilder. The consistency and dedication required for the sport directly translate to my work ethic in facing long-term research challenges.</em>
@@ -135,7 +179,7 @@
 
         <footer>
             <div class="container">
-                <p>&copy; 2025 Mucahit Gemici. Hosted on GitHub Pages.</p>
+                <p>&copy; 2026 Mucahit Gemici. Hosted on GitHub Pages.</p>
             </div>
         </footer>
     </body>

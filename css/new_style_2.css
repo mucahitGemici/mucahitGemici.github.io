@@ -1118,6 +1118,10 @@ hr.cv-divider {
     color: #fff;
     text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
+.status-badge.current {
+    background: #A3BE8C; /* Nord Green */
+    color: #2E3440;
+}
 
 /* 5. Badge Row */
 .badge-row {
@@ -1184,3 +1188,178 @@ hr.cv-divider {
     .cv-date { font-size: 0.8rem; }
     .skills-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================================
+   13. THEME TOGGLE CONTROL
+   ========================================= */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(216, 222, 233, 0.35);
+    color: #D8DEE9;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    color: #fff;
+    border-color: var(--accent-hover);
+    background-color: rgba(216, 222, 233, 0.12);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 2px;
+}
+
+/* GitHub hero button */
+.hero-btn.github { background-color: #24292e; color: white; border: 2px solid #24292e; }
+.hero-btn.github:hover { background-color: #444d56; border-color: #444d56; }
+
+/* =========================================
+   14. DARK THEME
+   Overrides the palette variables, then the places where the light
+   theme hard-codes a white / near-white literal.
+   ========================================= */
+:root { color-scheme: light; }
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg-color: #242933;
+    --card-bg: #2E3440;
+    --nav-bg: #1B2027;
+    --text-main: #ECEFF4;
+    --text-light: #C8D0DC;
+    --accent: #88C0D0;
+    --accent-hover: #8FBCBB;
+    --border: #3B4252;
+
+    /* Local helpers used only by the dark overrides below. */
+    --surface-alt: #353C4A;
+    --border-soft: #3B4252;
+}
+
+/* Layout surfaces */
+[data-theme="dark"] .hero-col { background: var(--card-bg); }
+[data-theme="dark"] .hero-profile { background-color: var(--surface-alt); }
+[data-theme="dark"] .carousel-container { background: var(--card-bg); }
+[data-theme="dark"] .mobile-project-card { background: var(--card-bg); }
+[data-theme="dark"] .update-item.compact { border-bottom-color: var(--border-soft); }
+[data-theme="dark"] .skill-group { border-bottom-color: var(--border-soft); }
+
+/* Scrollbars */
+[data-theme="dark"] .hero-updates-list { scrollbar-color: #4C566A transparent; }
+[data-theme="dark"] .hero-updates-list::-webkit-scrollbar-thumb { background-color: #4C566A; }
+[data-theme="dark"] .photo-thumbnails::-webkit-scrollbar-thumb { background-color: #4C566A; }
+
+/* Media placeholders (light theme sets these with !important) */
+[data-theme="dark"] .slide-gallery video.main-media,
+[data-theme="dark"] .slide-gallery iframe.main-media,
+[data-theme="dark"] .slide-gallery img.main-media,
+[data-theme="dark"] .photo-viewer-main img,
+[data-theme="dark"] .photo-viewer-main,
+[data-theme="dark"] .youtube-link-card,
+[data-theme="dark"] .mobile-media-wrapper {
+    background-color: var(--surface-alt) !important;
+    border-color: var(--border-soft) !important;
+}
+
+/* Tags, chips and toggles */
+[data-theme="dark"] .tag {
+    color: var(--text-light);
+    background-color: var(--surface-alt);
+    border-color: var(--border-soft);
+}
+[data-theme="dark"] .tag::before { color: #7B8394; }
+[data-theme="dark"] .mini-tag {
+    background-color: var(--surface-alt);
+    border-color: var(--border-soft);
+    color: var(--text-light);
+}
+[data-theme="dark"] .skill-tags span {
+    background: var(--surface-alt);
+    border-color: var(--border-soft);
+    color: var(--text-light);
+}
+[data-theme="dark"] .media-toggle-btn {
+    background-color: var(--surface-alt);
+    color: var(--text-light);
+    border-color: var(--border-soft);
+}
+[data-theme="dark"] .media-toggle-btn:hover {
+    background-color: #3B4252;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+[data-theme="dark"] .media-toggle-btn.active {
+    background-color: var(--accent);
+    color: #2E3440;
+    border-color: var(--accent);
+}
+
+/* Stat boxes (light theme uses !important) */
+[data-theme="dark"] .stat-box {
+    background: var(--surface-alt);
+    border-color: var(--border-soft);
+    color: var(--text-main);
+}
+[data-theme="dark"] .stat-box.achievement {
+    background-color: #3E3A2C !important;
+    border-color: #b58900 !important;
+    color: #EBCB8B !important;
+}
+[data-theme="dark"] .stat-box.achievement i { color: #EBCB8B !important; }
+[data-theme="dark"] .stat-box.info {
+    background-color: #2B3A47 !important;
+    border-color: #5E81AC !important;
+    color: #A9CCE3 !important;
+}
+[data-theme="dark"] .stat-box.info i { color: #88C0D0 !important; }
+
+/* CV timeline & cards */
+[data-theme="dark"] .timeline-wrapper::before { background: var(--border-soft); }
+[data-theme="dark"] .cv-item::before { background: var(--card-bg); }
+[data-theme="dark"] .cv-org .loc { color: #8B93A3; }
+[data-theme="dark"] .section-icon { background: #3B4252; }
+[data-theme="dark"] .skill-card { background: var(--surface-alt); border-color: var(--border-soft); }
+[data-theme="dark"] .skill-card:hover { background: #3B4252; border-color: var(--accent); }
+[data-theme="dark"] .timeline-wrapper .highlight-item { background: var(--surface-alt); }
+
+/* Publications */
+[data-theme="dark"] .pdf-link { border-color: var(--border-soft); }
+[data-theme="dark"] .pdf-link:hover {
+    background-color: var(--surface-alt);
+    border-color: #D08770;
+    color: #D08770;
+}
+[data-theme="dark"] .pdf-link i { color: #D08770; }
+
+/* Carousel dots.
+   Scoped away from .active / .featured: those set their own background at the
+   same specificity as a bare [data-theme] .dot, and this block is later in the
+   file, so an unscoped rule would win over them. */
+[data-theme="dark"] .dot:not(.active):not(.featured) { background-color: #4C566A; }
+
+/* Buttons that sit on light surfaces in the light theme */
+[data-theme="dark"] .hero-btn.github { background-color: #4C566A; border-color: #4C566A; }
+[data-theme="dark"] .hero-btn.github:hover { background-color: #5E6A82; border-color: #5E6A82; }
+[data-theme="dark"] .hero-btn.games { background-color: #4C566A; border-color: #4C566A; }
+[data-theme="dark"] .hero-btn.games:hover { background-color: #5E6A82; border-color: #5E6A82; }
+[data-theme="dark"] .hero-btn.academic { color: #2E3440; }
+
+/* Accent-on-dark needs dark text for contrast */
+[data-theme="dark"] .nav-btn:hover { color: #2E3440; }

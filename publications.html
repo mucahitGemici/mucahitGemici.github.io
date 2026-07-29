@@ -4,14 +4,35 @@
         <meta charset="UTF-8">
         <meta name="author" content="Mucahit Gemici">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mucahit Gemici - PhD Candidate</title>
-        
+        <title>Publications | Mucahit Gemici</title>
+        <meta name="description" content="Peer-reviewed publications by Mucahit Gemici in Human-Computer Interaction and Extended Reality, including IEEE TVCG, ACM SUI, IEEE ISMAR, PLOS ONE, and IEEE Access.">
+        <link rel="canonical" href="https://mucahitgemici.github.io/publications.html">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Mucahit Gemici">
+        <meta property="og:title" content="Publications | Mucahit Gemici">
+        <meta property="og:description" content="Peer-reviewed publications in Human-Computer Interaction and Extended Reality, including IEEE TVCG, ACM SUI, IEEE ISMAR, PLOS ONE, and IEEE Access.">
+        <meta property="og:url" content="https://mucahitgemici.github.io/publications.html">
+        <meta property="og:image" content="https://mucahitgemici.github.io/website-images/me.jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) { /* localStorage unavailable */ }
+            })();
+        </script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        
+
         <link rel="stylesheet" href="css/new_style_2.css">
+        <script src="javascript/website-logic.js"></script>
 
         <link rel="icon" type="image/png" href="website-images/Icon.png">
-        <link rel="apple-touch-icon" href="website-images/Icon.png">  
+        <link rel="apple-touch-icon" href="website-images/Icon.png">
     </head>
 
     <body>
@@ -21,12 +42,17 @@
                     <img src="website-images/Icon.png" alt="Logo">
                     Gemici
                 </a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="publications.html" class="active">Publications</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="publications.html" class="active">Publications</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -45,6 +71,57 @@
             <section class="content-section">
                 <div class="paper-item">
                     <p>
+                        <span class="pub-id journal">J4</span>
+                        <strong>Modeling Across Realities (MAR): Extending Desktop 3D Modeling with Augmented Reality</strong>
+                    </p>
+                    <p>Authors: <strong>M. Gemici</strong>, K. Johnsen, M. D. Barrera Machuca, A. U. Batmaz</p>
+                    <p>
+                        <em>IEEE Transactions on Visualization and Computer Graphics (TVCG, 2026), ISMAR 2026 Special Issue</em>
+                        <a href="papers/mar-tvcg.pdf" class="pdf-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Preprint
+                        </a>
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="paper-item">
+                    <p>
+                        <span class="pub-id journal">J3</span>
+                        <strong>Effects of False Positive and False Negative Early Warnings for Hand Tracking Failures on User Trust and Confidence in Virtual Reality</strong>
+                    </p>
+                    <p>Authors: A. Hatira, Z. Rasoulifar, <strong>M. Gemici</strong>, V. Phadnis, A. U. Batmaz</p>
+                    <p>
+                        <em>IEEE Transactions on Visualization and Computer Graphics (TVCG, 2026), ISMAR 2026 Special Issue</em>
+                        <a href="papers/effects-of-false-positive-and-false-negative-early-warnings.pdf" class="pdf-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Preprint
+                        </a>
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="paper-item">
+                    <p>
+                        <span class="pub-id conference">C4</span>
+                        <strong>Crossing Realities Has a Cost: Evaluating AR Second Screens for AI-Assisted Desktop Authoring</strong>
+                    </p>
+                    <p>Authors: <strong>M. Gemici</strong>, M. R. Bashar, W. Stuerzlinger, V. Phadnis, A. U. Batmaz</p>
+                    <p>
+                        <em>ACM Symposium on Spatial User Interaction (SUI 2026), Bari, Italy</em>
+                        <a href="papers/crossing-realities-sui.pdf" class="pdf-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://doi.org/10.1145/3822518.3830046" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="paper-item">
+                    <p>
                         <span class="pub-id journal">J2</span>
                         <strong>Gaze Analysis in Early Warning Visual Feedback System for Hand Tracking Failures in Virtual Reality</strong>
                     </p>
@@ -53,6 +130,9 @@
                         <em>IEEE Access (2025)</em> 
                         <a href="papers/feedback-gaze.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://doi.org/10.1109/ACCESS.2025.3621645" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
                         </a>
                     </p>
                 </div>
@@ -70,6 +150,9 @@
                         <a href="papers/landingWindows.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
                         </a>
+                        <a href="https://doi.org/10.1145/3694907.3765922" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
                     </p>
                 </div>
         
@@ -84,6 +167,9 @@
                         <em>PLOS ONE (2025)</em> 
                         <a href="papers/feedback-plosone.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://doi.org/10.1371/journal.pone.0323796" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
                         </a>
                     </p>
                 </div>
@@ -101,6 +187,9 @@
                         <a href="papers/speedcontrol.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
                         </a>
+                        <a href="https://doi.org/10.1109/ISMAR62088.2024.00061" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
                     </p>
                 </div>
             
@@ -111,11 +200,14 @@
                         <span class="pub-id workshop">W1</span>
                         <strong>Subtask-Based Virtual Hand Visualization Method for Enhanced User Accuracy in Virtual Reality Environments</strong>
                     </p>
-                    <p>Authors: L. Voisard, A. Hatira, M. R. Bashar, <strong>M. Gemici</strong>, M. Sarac, M. Kereten-Oertel, A. U. Batmaz</p>
+                    <p>Authors: L. Voisard, A. Hatira, M. R. Bashar, <strong>M. Gemici</strong>, M. Sarac, M. Kersten-Oertel, A. U. Batmaz</p>
                     <p>
                         <em>IEEE VR Workshop (2024)</em> 
                         <a href="papers/virtualHandLaurent.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="https://doi.org/10.1109/VRW62533.2024.00008" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
                         </a>
                     </p>
                 </div>
@@ -133,6 +225,9 @@
                         <a href="papers/muscleNET.pdf" class="pdf-link" target="_blank">
                             <i class="fas fa-file-pdf"></i> PDF
                         </a>
+                        <a href="https://doi.org/10.1109/ASYU56188.2022.9925553" class="pdf-link" target="_blank">
+                            <i class="fas fa-link"></i> DOI
+                        </a>
                     </p>
                 </div>
             </section>
@@ -141,6 +236,9 @@
         <hr>
 
         <footer>
-            </footer>
+            <div class="container">
+                <p>&copy; 2026 Mucahit Gemici. Hosted on GitHub Pages.</p>
+            </div>
+        </footer>
     </body>
 </html>

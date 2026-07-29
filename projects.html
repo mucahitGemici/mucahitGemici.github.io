@@ -4,11 +4,33 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Projects | Mucahit Gemici</title>
+        <meta name="author" content="Mucahit Gemici">
+        <meta name="description" content="Academic research and game development projects by Mucahit Gemici, spanning Virtual and Augmented Reality systems, cross-reality interfaces, brain-computer interfaces, and shipped mobile games.">
+        <link rel="canonical" href="https://mucahitgemici.github.io/projects.html">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Mucahit Gemici">
+        <meta property="og:title" content="Projects | Mucahit Gemici">
+        <meta property="og:description" content="Academic research and game development projects spanning VR/AR systems, cross-reality interfaces, BCI, and shipped mobile games.">
+        <meta property="og:url" content="https://mucahitgemici.github.io/projects.html">
+        <meta property="og:image" content="https://mucahitgemici.github.io/website-images/me.jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) { /* localStorage unavailable */ }
+            })();
+        </script>
+
         <link rel="stylesheet" href="css/new_style_2.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="javascript/website-logic.js"></script>
         <link rel="icon" type="image/png" href="website-images/Icon.png">
-        <link rel="apple-touch-icon" href="website-images/Icon.png">  
+        <link rel="apple-touch-icon" href="website-images/Icon.png">
     </head>
 
     <body>
@@ -18,12 +40,17 @@
                     <img src="website-images/Icon.png" alt="Logo">
                     Gemici
                 </a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                </ul>
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cv.html">CV</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="projects.html" class="active">Projects</a></li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -54,10 +81,86 @@
                         <button class="nav-btn prev" onclick="moveSlide('research-carousel', -1)">&#10094;</button>
     
                         <div class="slides-wrapper">
-                            
+
                             <div class="project-slide active">
                                 <div class="slide-gallery">
-                
+
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media lazy-media" width="100%" height="250" data-src="https://www.youtube.com/embed/B28v0jwQiA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="mar-main-img" src="website-images/mar/mar-1.jpg" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/mar/mar-1.jpg" class="thumb active" onclick="switchPhoto('mar-main-img', this)">
+                                            <img src="website-images/mar/mar-2.jpg" class="thumb" onclick="switchPhoto('mar-main-img', this)">
+                                            <img src="website-images/mar/mar-3.jpg" class="thumb" onclick="switchPhoto('mar-main-img', this)">
+                                        </div>
+                                    </div>
+
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Modeling Across Realities (MAR): Extending Desktop 3D Modeling with Augmented Reality</h3>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Johnsen, M. D. Barrera Machuca, A. U. Batmaz
+                                    </p>
+                                    <span class="tag">Cross-Reality / 3D Modeling / Augmented Reality</span>
+                                    <p>Industry-standard 3D modeling tools run on conventional desktop setups with 2D screens. Augmented Reality lets users perceive 3D shapes better in a body-centric space, but that improved spatial understanding comes at the cost of precision. MAR combines the two: the model stays in Blender on the desktop, while an immersive AR view adds spatial inspection and gesture-based selection. We evaluated MAR with 20 participants across an abstract shape and an everyday object. MAR outperformed desktop-based modeling with lower workload, higher usability and user preference, without compromising model quality in the abstract shape task and improving it in the everyday-object task.</p>
+                                    <a href="papers/mar-tvcg.pdf" target="_blank" class="project-link">Read Preprint &rarr;</a>
+                                </div>
+                            </div>
+
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+
+                                    <div class="video-view media-view">
+                                        <iframe class="main-media lazy-media" width="100%" height="250" data-src="https://www.youtube.com/embed/CbKt0w4SDFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    </div>
+
+                                    <div class="image-view media-view hidden-view">
+                                        <div class="photo-viewer-main">
+                                            <img id="cr-main-img" src="website-images/crossing-realities/crossing-realities-1.jpg" alt="Main view">
+                                        </div>
+                                        <div class="photo-thumbnails">
+                                            <img src="website-images/crossing-realities/crossing-realities-1.jpg" class="thumb active" onclick="switchPhoto('cr-main-img', this)">
+                                            <img src="website-images/crossing-realities/crossing-realities-2.jpg" class="thumb" onclick="switchPhoto('cr-main-img', this)">
+                                            <img src="website-images/crossing-realities/crossing-realities-3.jpg" class="thumb" onclick="switchPhoto('cr-main-img', this)">
+                                        </div>
+                                    </div>
+
+                                    <div class="media-toggle-group">
+                                        <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                            <i class="fas fa-video"></i> Video
+                                        </button>
+                                        <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                            <i class="fas fa-images"></i> Images
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Crossing Realities Has a Cost: Evaluating AR Second Screens for AI-Assisted Desktop Authoring</h3>
+                                    <p class="project-authors">
+                                        <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, M. R. Bashar, W. Stuerzlinger, V. Phadnis, A. U. Batmaz
+                                    </p>
+                                    <span class="tag">Cross-Reality / AR Second Screen / LLM-Assisted Authoring</span>
+                                    <p>Working with an LLM assistant means constantly moving content back and forth between your workspace and the model, which fragments attention and competes for screen space. AR has been proposed as a way to extend the desktop with virtual displays, so we built an AR second screen around a single keyboard-and-mouse interaction model and compared it against single-screen and dual-screen desktop setups. A conventional dual-screen setup remained more efficient, with significantly lower task completion time and switching cost, and the AR condition produced higher idle ratios that point to re-engagement costs when users crossed between physical and virtual workspaces. Participants still rated AR positively. The conclusion is that effective cross-reality interfaces need to minimise transition costs rather than simply add virtual display space.</p>
+                                    <a href="papers/crossing-realities-sui.pdf" target="_blank" class="project-link">Read Paper &rarr;</a>
+                                </div>
+                            </div>
+
+                            <div class="project-slide">
+                                <div class="slide-gallery">
+
                                     <div class="video-view media-view">
                                         <video class="main-media lazy-media" muted loop playsinline controls>
                                             <source data-src="website-videos/feedback-visual-video.mp4">
@@ -94,7 +197,7 @@
                                         <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz
                                     </p>
                                     <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
-                                    <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
+                                    <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), the early warning condition reduced hand-tracking failures by up to 83% (Out-of-Vision Hands) compared to no feedback, raised SUS usability ratings to an 'Excellent' grade (up from 'Poor' in the manipulation task and 'Awful' in the assembly task), and lowered cognitive load.</p>
                                     <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="project-link">Read Paper &rarr;</a>
                                 </div>
                             </div>
@@ -137,7 +240,7 @@
                                         <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz
                                     </p>
                                     <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
-                                    <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
+                                    <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across three hand-tracking failure conditions, we found that the early warning feedback did not disrupt users' attention to their primary task: participants maintained their focus on object placement and made fewer placement errors. The results also showed that attention toward the feedback varied by the type of tracking failure, and that fixations on the alert decreased with repeated exposure, suggesting a possible habituation effect.</p>
                                     <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="project-link">Read Paper &rarr;</a>
                                 </div>
                             </div>
@@ -175,7 +278,7 @@
                                         <i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz
                                     </p>
                                     <span class="tag">Signed Distance Field / Mid-Air Manipulation</span>
-                                    <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
+                                    <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, and improves the overall user experience.</p>
                                     <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="project-link">Read Paper &rarr;</a>
                                 </div>
                             </div>
@@ -227,10 +330,12 @@
                         <button class="nav-btn next" onclick="moveSlide('research-carousel', 1)">&#10095;</button>
     
                         <div class="carousel-dots">
-                            <span class="dot featured active" onclick="currentSlide('research-carousel', 0)" data-title="Google Funded"></span>
-                            <span class="dot featured" onclick="currentSlide('research-carousel', 1)" data-title="Google Funded"></span>
-                            <span class="dot" onclick="currentSlide('research-carousel', 2)"></span>
-                            <span class="dot featured" onclick="currentSlide('research-carousel', 3)" data-title="Award Winner"></span>
+                            <span class="dot active" onclick="currentSlide('research-carousel', 0)"></span>
+                            <span class="dot" onclick="currentSlide('research-carousel', 1)"></span>
+                            <span class="dot featured" onclick="currentSlide('research-carousel', 2)" data-title="Google Funded"></span>
+                            <span class="dot featured" onclick="currentSlide('research-carousel', 3)" data-title="Google Funded"></span>
+                            <span class="dot" onclick="currentSlide('research-carousel', 4)"></span>
+                            <span class="dot featured" onclick="currentSlide('research-carousel', 5)" data-title="Award Winner"></span>
                         </div>
                     </div>
                 </section>
@@ -850,10 +955,86 @@
         
                 <section class="content-section" id="academic-projects-mobile">
                     <h2>Academic Research</h2>
-        
+
                     <div class="mobile-project-card">
                         <div class="mobile-media-wrapper slide-gallery">
-                            
+
+                            <div class="video-view media-view">
+                                <iframe class="main-media lazy-media" width="100%" height="250" data-src="https://www.youtube.com/embed/B28v0jwQiA4" frameborder="0" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="mar-main-img-mobile" src="website-images/mar/mar-1.jpg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/mar/mar-1.jpg" class="thumb active" onclick="switchPhoto('mar-main-img-mobile', this)">
+                                    <img src="website-images/mar/mar-2.jpg" class="thumb" onclick="switchPhoto('mar-main-img-mobile', this)">
+                                    <img src="website-images/mar/mar-3.jpg" class="thumb" onclick="switchPhoto('mar-main-img-mobile', this)">
+                                </div>
+                            </div>
+
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mobile-card-content">
+                            <h3>Modeling Across Realities (MAR): Extending Desktop 3D Modeling with Augmented Reality</h3>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, K. Johnsen, M. D. Barrera Machuca, A. U. Batmaz</p>
+                            <span class="tag">Cross-Reality / 3D Modeling / Augmented Reality</span>
+                            <p>Industry-standard 3D modeling tools run on conventional desktop setups with 2D screens. Augmented Reality lets users perceive 3D shapes better in a body-centric space, but that improved spatial understanding comes at the cost of precision. MAR combines the two: the model stays in Blender on the desktop, while an immersive AR view adds spatial inspection and gesture-based selection. We evaluated MAR with 20 participants across an abstract shape and an everyday object. MAR outperformed desktop-based modeling with lower workload, higher usability and user preference, without compromising model quality in the abstract shape task and improving it in the everyday-object task.</p>
+
+                            <a href="papers/mar-tvcg.pdf" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Preprint &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+
+                            <div class="video-view media-view">
+                                <iframe class="main-media lazy-media" width="100%" height="250" data-src="https://www.youtube.com/embed/CbKt0w4SDFM" frameborder="0" allowfullscreen></iframe>
+                            </div>
+
+                            <div class="image-view media-view hidden-view">
+                                <div class="photo-viewer-main">
+                                    <img id="cr-main-img-mobile" src="website-images/crossing-realities/crossing-realities-1.jpg" alt="Main view">
+                                </div>
+                                <div class="photo-thumbnails">
+                                    <img src="website-images/crossing-realities/crossing-realities-1.jpg" class="thumb active" onclick="switchPhoto('cr-main-img-mobile', this)">
+                                    <img src="website-images/crossing-realities/crossing-realities-2.jpg" class="thumb" onclick="switchPhoto('cr-main-img-mobile', this)">
+                                    <img src="website-images/crossing-realities/crossing-realities-3.jpg" class="thumb" onclick="switchPhoto('cr-main-img-mobile', this)">
+                                </div>
+                            </div>
+
+                            <div class="media-toggle-group">
+                                <button class="media-toggle-btn active" onclick="switchMediaView(this, 'video')">
+                                    <i class="fas fa-video"></i> Video
+                                </button>
+                                <button class="media-toggle-btn" onclick="switchMediaView(this, 'images')">
+                                    <i class="fas fa-images"></i> Images
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mobile-card-content">
+                            <h3>Crossing Realities Has a Cost: Evaluating AR Second Screens for AI-Assisted Desktop Authoring</h3>
+                            <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, M. R. Bashar, W. Stuerzlinger, V. Phadnis, A. U. Batmaz</p>
+                            <span class="tag">Cross-Reality / AR Second Screen / LLM-Assisted Authoring</span>
+                            <p>Working with an LLM assistant means constantly moving content back and forth between your workspace and the model, which fragments attention and competes for screen space. AR has been proposed as a way to extend the desktop with virtual displays, so we built an AR second screen around a single keyboard-and-mouse interaction model and compared it against single-screen and dual-screen desktop setups. A conventional dual-screen setup remained more efficient, with significantly lower task completion time and switching cost, and the AR condition produced higher idle ratios that point to re-engagement costs when users crossed between physical and virtual workspaces. Participants still rated AR positively. The conclusion is that effective cross-reality interfaces need to minimise transition costs rather than simply add virtual display space.</p>
+
+                            <a href="papers/crossing-realities-sui.pdf" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="mobile-project-card">
+                        <div class="mobile-media-wrapper slide-gallery">
+
                             <div class="video-view media-view">
                                 <video class="main-media lazy-media" muted loop playsinline controls>
                                     <source data-src="website-videos/feedback-visual-video.mp4">
@@ -887,7 +1068,7 @@
                             <div class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</div>
                             <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, V. Phadnis, A.U. Batmaz</p>
                             <span class="tag">VR / Early Warning Systems / Hand Tracking</span>
-                            <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), this system significantly outperformed benchmarks, reducing tracking loss by up to 83% in critical scenarios and raising usability scores from an 'F' to an 'A' grade while lowering cognitive load.</p>
+                            <p>This <strong>Google-funded</strong> study addresses the reliability issues of camera-based VR hand tracking by shifting from reactive error correction to proactive prevention. Using Unity and the Meta XR SDK, I developed a predictive algorithm that detects high-risk failure scenarios—specifically low light, out-of-vision hands, and self-occlusion—and alerts the user via a non-intrusive visual cue before tracking is lost. In a user study (N=18), the early warning condition reduced hand-tracking failures by up to 83% (Out-of-Vision Hands) compared to no feedback, raised SUS usability ratings to an 'Excellent' grade (up from 'Poor' in the manipulation task and 'Awful' in the assembly task), and lowered cognitive load.</p>
                                     
                             <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0323796" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
                         </div>
@@ -928,7 +1109,7 @@
                             <div class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</div>
                             <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, A. Hatira, V. Phadnis, A.U. Batmaz</p>
                             <span class="tag">VR / Eye Tracking / Attention</span>
-                            <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across critical failure conditions, we determined that the system is non-intrusive, as user attention on primary tasks remained consistent even when warnings were displayed. Furthermore, the results demonstrated a habituation effect where users processed alerts significantly faster over time, alongside a context-aware pattern where attention shifted appropriately based on the specific type of tracking error encountered.</p>
+                            <p>Building on previous <strong>Google-funded</strong> research, this study utilized the eye-tracking capabilities of the Meta Quest Pro to investigate whether early warning visual feedback for hand-tracking failures distracts users. By analyzing gaze fixations and saccades across three hand-tracking failure conditions, we found that the early warning feedback did not disrupt users' attention to their primary task: participants maintained their focus on object placement and made fewer placement errors. The results also showed that attention toward the feedback varied by the type of tracking failure, and that fixations on the alert decreased with repeated exposure, suggesting a possible habituation effect.</p>
                                     
                             <a href="https://ieeexplore.ieee.org/abstract/document/11203963" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
                         </div>
@@ -966,7 +1147,7 @@
                             <h3>Object Speed Control with a Signed Distance Field</h3>
                             <p class="project-authors"><i class="fas fa-users"></i> Authors: <strong>M. Gemici</strong>, W. Stuerzlinger, A.U. Batmaz</p>
                             <span class="tag">SDF / Mid-Air Manipulation</span>
-                            <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, significantly improving the overall user experience.</p>
+                            <p>In Virtual Reality (VR) applications, interacting with distant objects relies heavily on mid-air object manipulation, yet the inherent distance often restricts movement precision. In this project, we introduced the Signed Distance Field (SDF) method for mid-air object manipulation and combined it with the ray casting interaction technique to investigate its effect on user performance. To increase movement accuracy, we leveraged the speed-accuracy trade-off to dynamically adjust object manipulation speed based on the SDF algorithm's output. Our study with 18 participants examined the effects of this method across tasks of varying complexity. The results showed that ray casting with SDF reduces the number of errors in complex tasks without slowing down the user, and improves the overall user experience.</p>
                                     
                             <a href="https://ieeexplore.ieee.org/abstract/document/10765476" target="_blank" class="hero-btn academic" style="width:100%; justify-content:center;">Read Paper &rarr;</a>
                         </div>
@@ -1525,7 +1706,7 @@
 
         <footer>
             <div class="container">
-                <p>&copy; 2025 Mucahit Gemici. Hosted on GitHub Pages.</p>
+                <p>&copy; 2026 Mucahit Gemici. Hosted on GitHub Pages.</p>
             </div>
         </footer>
 

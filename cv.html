@@ -4,12 +4,33 @@
         <meta charset="UTF-8">
         <meta name="author" content="Mucahit Gemici">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mucahit Gemici - PhD Candidate</title>
+        <title>CV | Mucahit Gemici</title>
+        <meta name="description" content="Curriculum Vitae of Mucahit Gemici: Ph.D. researcher in Human-Computer Interaction and Extended Reality at Concordia University, with experience in Unity, XR development, and user studies.">
+        <link rel="canonical" href="https://mucahitgemici.github.io/cv.html">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Mucahit Gemici">
+        <meta property="og:title" content="CV | Mucahit Gemici">
+        <meta property="og:description" content="Ph.D. researcher in Human-Computer Interaction and Extended Reality at Concordia University.">
+        <meta property="og:url" content="https://mucahitgemici.github.io/cv.html">
+        <meta property="og:image" content="https://mucahitgemici.github.io/website-images/me.jpeg">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('theme');
+                    if (!t) { t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) { /* localStorage unavailable */ }
+            })();
+        </script>
+
         <link rel="stylesheet" href="css/new_style_2.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <script src="javascript/website-logic.js"></script>
         <link rel="icon" type="image/png" href="website-images/Icon.png">
-        <link rel="apple-touch-icon" href="website-images/Icon.png">    
+        <link rel="apple-touch-icon" href="website-images/Icon.png">
     </head>
 
     <body>
@@ -19,12 +40,17 @@
                     <img src="website-images/Icon.png" alt="Logo">
                     Gemici
                 </a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html" class="active">CV</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cv.html" class="active">CV</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch colour theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
 
@@ -83,15 +109,15 @@
         
                 <div class="timeline-wrapper">
                     <div class="cv-item highlight-item">
-                        <div class="cv-date">Summer 2026</div>
+                        <div class="cv-date">Jun 2026 – Sep 2026</div>
                         <div class="cv-content">
-                            <span class="status-badge incoming">Incoming</span>
+                            <span class="status-badge current">Current</span>
                             <h3>Visiting Researcher</h3>
                             <div class="cv-org">Nara Institute of Science and Technology (NAIST) <span class="loc">• Nara, Japan</span></div>
                             <ul>
                                 <li>Recipient of the prestigious <strong>Mitacs Global Research Internship Award</strong>.</li>
-                                <li>Joining the <strong>Cybernetics and Reality Engineering (CARE) Laboratory</strong> under the supervision of <strong>Prof. Kiyoshi Kiyokawa</strong>.</li>
-                                <li><strong>Project:</strong> "Mitigating Detrimental Effects of Vergence Accommodation Conflict (VAC) in Stereo Displays."</li>
+                                <li>Working in the <strong>Cybernetics and Reality Engineering (CARE) Laboratory</strong> under the supervision of <strong>Prof. Kiyoshi Kiyokawa</strong>.</li>
+                                <li><strong>Project:</strong> Developing a smart glasses assistance system for daily use.</li>
                             </ul>
                         </div>
                     </div>
@@ -101,15 +127,13 @@
                         <div class="cv-content">
                             <h3>Ph.D. Researcher</h3>
                             <div class="cv-org">Concordia University <span class="loc">• Montreal, Canada</span></div>
-                            
-                            <div class="badge-row">
-                                <span class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</span>
-                            </div>
-        
+
                             <ul>
                                 <li><strong>Google-Funded Projects:</strong> Engineered an early-warning system for common hand-tracking failures in VR. Detected tracking loss before it occurs and provided visual feedback to reduce tracking loss and improve user experience.
-                                Used eye-tracking and user behavior logging to analyze user reaction for early warnings. Resulted in publications in <strong>PLOS ONE</strong> and <strong>IEEE Access</strong>.</li>
+                                Used eye-tracking and user behavior logging to analyze user reaction for early warnings. Resulted in publications in <strong>PLOS ONE</strong> and <strong>IEEE Access</strong>, and provided the system foundation for a follow-up study on user trust and confidence under false warnings (<strong>IEEE TVCG</strong>, ISMAR 2026 Special Issue).</li>
                                 <li>Designed and validated novel interaction techniques for "Mid-Air Object Manipulation," implementing algorithms for <strong>Object Speed Control</strong> to enhance user precision (Published at <strong>ISMAR 2024</strong>).</li>
+                                <li><strong>Cross-Reality Systems:</strong> Built and evaluated <strong>MAR</strong>, a cross-reality 3D modeling system pairing desktop Blender with immersive AR inspection and gesture-based selection (N=20). Published in <strong>IEEE TVCG</strong> (ISMAR 2026 Special Issue).</li>
+                                <li><strong>AI-Assisted Authoring in XR:</strong> Designed an AR second-screen system for LLM-assisted desktop workflows and quantified the transition costs of crossing between physical and virtual workspaces. Published at <strong>ACM SUI 2026</strong>.</li>
                                 <li>Developed high-fidelity experimental testbeds in <strong>Unity (C#)</strong>, ensuring consistent performance to maintain ecological validity during user studies.</li>
                                 <li>Conducted mixed-methods user studies for each paper.</li>
                             </ul>
@@ -227,7 +251,7 @@
                             
                             <p style="margin-bottom: 5px; margin-top: 10px;"><strong>COMP 476: Advanced Game Development</strong></p>
                             <ul>
-                                <li><strong>Winter 2026 (Incoming):</strong> Lab Demonstrator.</li>
+                                <li><strong>Winter 2026:</strong> Lab Demonstrator.</li>
                                 <li><strong>Winter 2025 (Marker):</strong> Graded assignments/demos for Dr. A.U. Batmaz.</li>
                                 <li><strong>Winter 2024 (Lab Instructor):</strong> Taught 2 lab sections on game programming patterns.</li>
                             </ul>
@@ -240,7 +264,7 @@
         
                             <p style="margin-bottom: 5px; margin-top: 10px;"><strong>SOEN 287: Web Programming</strong></p>
                             <ul>
-                                <li><strong>Winter 2026 (Incoming):</strong> Marker.</li>
+                                <li><strong>Winter 2026:</strong> Marker.</li>
                             </ul>
                         </div>
                     </div>
@@ -290,8 +314,18 @@
                      <ul style="list-style-type: none; padding-left: 0;">
                         
                         <li class="paper-item" style="margin-bottom: 15px;">
+                            <span class="pub-id journal">IEEE TVCG</span>
+                            <strong>Gemici, M.</strong>, Johnsen, K., Barrera Machuca, M. D., &amp; Batmaz, A. U. (2026). Modeling Across Realities (MAR): Extending Desktop 3D Modeling with Augmented Reality. <em>IEEE Transactions on Visualization and Computer Graphics</em> (ISMAR 2026 Special Issue).
+                        </li>
+
+                        <li class="paper-item" style="margin-bottom: 15px;">
+                            <span class="pub-id conference">ACM SUI '26</span>
+                            <strong>Gemici, M.</strong>, Bashar, M. R., Stuerzlinger, W., Phadnis, V., &amp; Batmaz, A. U. (2026). Crossing Realities Has a Cost: Evaluating AR Second Screens for AI-Assisted Desktop Authoring. <em>ACM Symposium on Spatial User Interaction</em>.
+                        </li>
+
+                        <li class="paper-item" style="margin-bottom: 15px;">
                             <div><span class="award-badge google-badge"><i class="fab fa-google"></i> Funded by Google</span></div>
-                            <span class="pub-id journal">IEEE Access</span> 
+                            <span class="pub-id journal">IEEE Access</span>
                             <strong>Gemici, M.</strong>, Hatira, A., Phadnis, V., & Batmaz, A. U. (2025). Gaze Analysis in Early Warning Visual Feedback System for Hand Tracking Failures in Virtual Reality. <em>IEEE Access</em>.
                         </li>
                         
@@ -320,7 +354,7 @@
         
         <footer>
             <div class="container">
-                <p>&copy; 2025 Mucahit Gemici. Hosted on GitHub Pages.</p>
+                <p>&copy; 2026 Mucahit Gemici. Hosted on GitHub Pages.</p>
             </div>
         </footer>
     </body>
