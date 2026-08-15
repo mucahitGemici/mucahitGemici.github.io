@@ -1617,3 +1617,100 @@ strong, b {
 [data-theme="dark"] b {
     color: #FFFFFF;
 }
+
+/* =========================================
+   18. PUBLICATION CITE / BIBTEX BLOCK
+   Sits under the publication links on each papers/*.html page. Borrows the rule
+   treatment from .publication-meta and the button treatment from
+   .publication-link so it reads as part of the existing page furniture.
+   All colours come from theme variables, so dark mode needs no override.
+   ========================================= */
+.publication-cite {
+    margin: 0 0 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.publication-cite h2 {
+    margin: 0 0 0.85rem;
+    font-size: 1.15rem;
+    border: none;
+    padding: 0;
+}
+
+.cite-formatted {
+    margin-bottom: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.cite-bibtex-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cite-bibtex-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+
+.cite-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.7rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cite-copy:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--bg-color);
+}
+
+.cite-copy:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.cite-copy.is-copied {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.cite-bibtex {
+    margin: 0;
+    padding: 1rem;
+    /* long entries scroll inside the block instead of widening the page */
+    overflow-x: auto;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-main);
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.cite-bibtex code {
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    white-space: pre;
+}
+
+@media (max-width: 600px) {
+    .cite-bibtex { font-size: 0.76rem; padding: 0.75rem; }
+}

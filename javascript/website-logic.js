@@ -88,6 +88,68 @@ function initPhotoLightbox() {
 
 document.addEventListener('DOMContentLoaded', initPhotoLightbox);
 
+/* =========================================
+   0c. COPY BIBTEX
+   Only the papers/*.html pages carry these buttons; this file is shared by every
+   page, so bail out quietly when none are present.
+   ========================================= */
+function initBibtexCopy() {
+    const buttons = document.querySelectorAll('.cite-copy');
+    if (!buttons.length) return;
+
+    function legacyCopy(text) {
+        // navigator.clipboard needs a secure context, so file:// and plain http
+        // fall back to a throwaway textarea.
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        let ok = false;
+        try {
+            ok = document.execCommand('copy');
+        } catch (e) {
+            ok = false;
+        }
+        document.body.removeChild(ta);
+        return ok;
+    }
+
+    buttons.forEach((btn) => {
+        const label = btn.querySelector('.cite-copy-label');
+        const source = document.getElementById(btn.dataset.copyTarget);
+        if (!source) return;
+
+        btn.addEventListener('click', () => {
+            const text = source.textContent;
+
+            function done(ok) {
+                if (!label) return;
+                const original = 'Copy';
+                label.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+                btn.classList.toggle('is-copied', ok);
+                window.setTimeout(() => {
+                    label.textContent = original;
+                    btn.classList.remove('is-copied');
+                }, 2000);
+            }
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(
+                    () => done(true),
+                    () => done(legacyCopy(text))
+                );
+            } else {
+                done(legacyCopy(text));
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initBibtexCopy);
+
 // 1. MINI PHOTO GALLERY SWITCHER
 function switchPhoto(mainImgId, clickedThumb) {
     // Update main image
